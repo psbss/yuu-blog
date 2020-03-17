@@ -24,8 +24,8 @@ jobs:
       env:
         CI: true
     - name: Archive Production Artifact
-      uses: actions/upload-artifact@master
       run: cd blog
+      uses: actions/upload-artifact@master
       with:
         name: public
         path: public
