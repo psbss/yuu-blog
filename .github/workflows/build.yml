@@ -29,9 +29,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      run: cd blog
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
         name: public
-        path: public
+        path: blog/public
