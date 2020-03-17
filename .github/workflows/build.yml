@@ -33,5 +33,5 @@ jobs:
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
-        name: blog/public
+        name: public
         path: blog/public
