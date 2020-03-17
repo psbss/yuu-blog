@@ -1,0 +1,16 @@
+name: Gatsby Build
+
+on:
+  push:
+    branches:
+      - developsss
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          deploy-branch: public
+          gatsby-args: --prefix-paths
