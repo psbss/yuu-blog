@@ -25,6 +25,7 @@ jobs:
         CI: true
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
+      run: cd blog
       with:
         name: public
         path: public
