@@ -20,6 +20,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm install
     - run: gatsby build
-      env:
-        CI: true
+      with:
+        deploy-branch: public
