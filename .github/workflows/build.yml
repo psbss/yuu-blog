@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: deploy to public branch
+    name: build files
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,14 @@ jobs:
         npm run build --if-present
       env:
         CI: true
-    - name: Archive Production Artifact
+
+  upload:
+    name: upload outputs
+    runs-on: ubuntu-latest
+
+    steps:
       run: cd blog
+    - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
         name: public
