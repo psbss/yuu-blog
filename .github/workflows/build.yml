@@ -33,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: public
-        path: ../blog/public
+        path: /blog/public
