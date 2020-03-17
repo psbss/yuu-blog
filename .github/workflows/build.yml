@@ -24,6 +24,8 @@ jobs:
       env:
         CI: true
     - name: Archive Production Artifact
+      run: ls -a
+        shell: bash
       uses: actions/upload-artifact@master
       with:
         name: public
