@@ -22,5 +22,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: gatsby build
-      with:
-        deploy-branch: public
+    env: public
