@@ -23,8 +23,9 @@ jobs:
         npm run build --if-present
       env:
         CI: true
-    - name: Archive Production Artifact
+    - name: show files
       run: ls -a
+    - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
         name: public
