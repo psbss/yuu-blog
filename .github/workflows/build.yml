@@ -28,9 +28,10 @@ jobs:
         pwd
         ls -a
         cd blog
+        pwd
         ls -a
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
-        name: public
-        path: /blog/public
+        name: blog/public
+        path: blog/public
