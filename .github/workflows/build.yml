@@ -47,4 +47,7 @@ jobs:
         name: github_yuu-blog
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: run deploy script
-      run: bash deploy.sh
+      run: |
+        ls -a
+        pwd
+        bash .github/workflows/deploy.sh
