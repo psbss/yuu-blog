@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: build files
+    name: Build files
     runs-on: ubuntu-latest
 
     steps:
@@ -23,15 +23,28 @@ jobs:
         npm run build --if-present
       env:
         CI: true
-    - name: show files
-      run: |
-        pwd
-        ls -a
-        cd blog
-        pwd
-        ls -a
     - name: Archive Production Artifact
       uses: actions/upload-artifact@master
       with:
         name: public
         path: blog/public
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@master
+    - name: Download Artifact
+      uses: actions/download-artifact@master
+      with:
+        name: public
+    - name: Install SSH Key
+      uses: shimataro/ssh-key-action@v2.0.1
+      with:
+        key: ${{ secrets.SSH_KEY }}
+        name: github_yuu-blog
+        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+    - name: run deploy script
+      run: bash deploy.sh
