@@ -47,4 +47,4 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: rsync
-      run: rsync -auvz --delete public/ rtrfpylx@psbss.mixh.jp:www/ue-y.me/blog/ -i ~/.ssh/id_rsa -p 22
+      run: rsync -auvz --delete public/ rtrfpylx@psbss.mixh.jp:./www/ue-y.me/blog/
