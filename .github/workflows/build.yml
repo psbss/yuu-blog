@@ -49,7 +49,7 @@ jobs:
     - name: run deploy script
       run: |
         pwd
-        ls -la
+        ls -la /home/runner/.ssh
         chmod 700 /home/runner/.ssh
         chmod 600 /home/runner/.ssh/id_rsa
         ls -la /home/runner/.ssh
