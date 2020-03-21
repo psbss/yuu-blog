@@ -41,5 +41,12 @@ jobs:
       uses: actions/download-artifact@master
       with:
         name: public
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.0.7
+      with:
+        host: ${{ secrets.HOSTNAME }}
+        username: ${{ secrets.USER }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v2
