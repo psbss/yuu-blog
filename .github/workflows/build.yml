@@ -48,7 +48,4 @@ jobs:
         name: github_yuu-blog
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: run deploy script
-      run: |
-        ls -a
-        pwd
-        rsync -acvz --delete ./output/ user@remote:/path/to/deploy/
+      run: rsync -acvz --delete ./output/ user@remote:/path/to/deploy/
