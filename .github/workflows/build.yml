@@ -51,4 +51,4 @@ jobs:
       run: |
         ls -a
         pwd
-        bash .github/workflows/deploy.sh
+        rsync -acvz --delete ./output/ user@remote:/path/to/deploy/
