@@ -45,7 +45,7 @@ jobs:
       with:
         private-key: ${{ secrets.SSH_KEY }}
         public-key: ${{ secrets.SSH_KEY_PUBLIC }}
-        # name: github_yuu-blog
+        name: github_yuu-blog
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: run deploy script
       run: |
