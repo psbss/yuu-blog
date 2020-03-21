@@ -41,16 +41,12 @@ jobs:
       uses: actions/download-artifact@master
       with:
         name: public
-    - name: Install SSH Key
-      uses: shimataro/ssh-key-action@v2.0.1
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    - name: run deploy script
-      run: |
-        pwd
-        ls -la /home/runner/.ssh
-        chmod 700 /home/runner/.ssh
-        chmod 600 /home/runner/.ssh/id_rsa
-        ls -la /home/runner/.ssh
-        rsync ./public/ ${{ secrets.USER }}@${{ secrets.HOSTNAME }}:./www/ue-y.me/blog/
+    - name: ssh deploy
+      uses: easingthemes/ssh-deploy@v2.0.8
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+        ARGS: "-rltgoDzvO"
+        SOURCE: "public/"
+        REMOTE_HOST: ${{ secrets.HOSTNAME }}
+        REMOTE_USER: ${{ secrets.USER }}
+        TARGET: ./www/ue-y.me/blog/
