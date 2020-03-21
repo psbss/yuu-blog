@@ -46,5 +46,4 @@ jobs:
       with:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v2
+      run: ssh rtrfpylx@psbss.mixh.jp -i ~/.ssh/id_rsa -p 22
