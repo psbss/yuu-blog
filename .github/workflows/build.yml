@@ -47,10 +47,5 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         name: github_yuu-blog
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
-        config: |                                         # will be appended!
-          Host target
-          HostName ${{secrets.HOSTNAME}}
-          User ${{secrets.USER}}
-          IdentityFile ~/.ssh/github_yuu-blog
     - name: run deploy script
-      run: rsync -acvz --delete ./output/ user@remote:/path/to/deploy/
+      run: rsync -acvz --delete ./output/ ${{secrets.USER}}@HostName ${{secrets.HOSTNAME}}:./www/ue-y.me/blog/
