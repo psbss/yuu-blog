@@ -47,4 +47,10 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: run deploy script
-      run: rsync ./public/ ${{ secrets.USER }}@${{ secrets.HOSTNAME }}:./www/ue-y.me/blog/
+      run: |
+        pwd
+        ls -la
+        chmod 700 /home/runner/.ssh
+        chmod 600 /home/runner/.ssh/id_rsa
+        ls -la /home/runner/.ssh
+        rsync ./public/ ${{ secrets.USER }}@${{ secrets.HOSTNAME }}:./www/ue-y.me/blog/
