@@ -47,4 +47,4 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
     - name: rsync
-      run: rsync -auvz --delete public/ ${{ secrets.USER }}@${{ secrets.HOSTNAME }}:./www/ue-y.me/blog/
+      run: rsync -auvz --delete public/ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOSTNAME }}:./www/ue-y.me/blog/
