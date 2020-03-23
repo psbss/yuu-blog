@@ -50,19 +50,19 @@ Gatsby自体は以前利用した経験があったため詰まることはな�
 中でも手順6のrsyncにてデプロイを行う部分はかなり手こずりました。  
 rsync自体は非常に簡単で、
 
-```
+```bash:title=bash
 rsync [option] 同期元ディレクトリ/ 同期先ディレクトリ/
 ```
 
 と書けばいい感じに動いてくれます。これが、SSHを利用したrsyncになると、同期先サーバとディレクトリを指定します。ソースコードは以下の感じになります。
 
-```
+```bash:title=bash
 rsync [option] 同期元ディレクトリ/ ユーザ名@ホストアドレス:同期先ディレクトリ/
 ```
 
 Github Actionsの場合は環境変数のようなsecretsという機能を利用することができるので、以下のように書き直せます。
 
-```
+```bash:title=bash
 [option] 同期元ディレクトリ/ ${{secrets.REMOTE_USER}}@${{secrets.REMOTE_HOST}}:同期先ディレクトリ
 ```
 このとき、REMOTE_HOST側のsecretsがうまく動かない場合があるので、そのときは直書する。
