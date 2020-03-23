@@ -75,7 +75,7 @@ module.exports = {
         short_name: `Inquisitiveness`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#1950b0`,
         display: `minimal-ui`,
         icon: `content/assets/siteicon.png`,
       },
@@ -87,6 +87,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ],
 }
