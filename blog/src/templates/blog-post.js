@@ -5,6 +5,12 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import {
+  TwitterShareButton,
+  TwitterIcon,
+  LineShareButton,
+  LineIcon,
+} from "react-share"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -43,6 +49,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             marginBottom: rhythm(1),
           }}
         />
+        <TwitterShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+          <TwitterIcon round size={32} />
+        </TwitterShareButton>
+        <LineShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+          <LineIcon round size={32} />
+        </LineShareButton>
         <footer>
           <Bio />
         </footer>
