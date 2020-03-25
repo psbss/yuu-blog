@@ -71,7 +71,7 @@ jobs:
           git remote set-url origin https://psbss:${GITHUB_TOKEN}@github.com/psbss/yuu-blog.git
           git checkout master
           git branch -a
-          git add public/
-          git commit public/ -m "commit public directory"
-          git push origin HEAD
           git status
+          git add .
+          git commit -m "commit public directory"
+          git push origin HEAD
