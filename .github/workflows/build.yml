@@ -71,5 +71,5 @@ jobs:
           git checkout -b develop
           git branch -a
           git add .
-          git push origin HEAD
+          git push origin develop
           git status
