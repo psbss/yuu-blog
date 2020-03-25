@@ -61,6 +61,7 @@ jobs:
         uses: actions/download-artifact@master
         with:
           name: public
+          path: blog/public
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
