@@ -68,8 +68,8 @@ jobs:
           git config --global user.name "psbss_bot"
           git config --global user.email "${{ secrets.USER_EMAIL }}"
           git remote set-url origin https://psbss:${GITHUB_TOKEN}@github.com/psbss/yuu-blog.git
-          git checkout -b develop
+          git checkout -b master
           git branch -a
           git add .
-          git push origin develop
+          git push origin HEAD
           git status
