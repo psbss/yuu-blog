@@ -11,40 +11,64 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install and build
-      run: |
-        cd blog
-        npm ci
-        npm run build --if-present
-      env:
-        CI: true
-    - name: Archive Production Artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: public
-        path: blog/public
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install and build
+        run: |
+          cd blog
+          npm ci
+          npm run build --if-present
+        env:
+          CI: true
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: public
+          path: blog/public
 
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@master
-    - name: Download Artifact
-      uses: actions/download-artifact@master
-      with:
-        name: public
-    - name: Install SSH Key
-      uses: shimataro/ssh-key-action@v2.0.1
-      with:
-        key: ${{ secrets.SSH_KEY }}
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    - name: rsync
-      run: rsync -auvz --delete public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: public
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.0.1
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: rsync
+        run: rsync -auvz --delete public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+
+  commit:
+    name: Commit public directory
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: public
+      - name: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "psbss_bot"
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git remote set-url origin https://psbss:${GITHUB_TOKEN}@github.com/psbss/yuu-blog.git
+          git checkout -b develop
+          git branch -a
+          git add .
+          git status
