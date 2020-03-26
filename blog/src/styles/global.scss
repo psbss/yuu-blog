@@ -1,0 +1,55 @@
+.gatsby-highlight {
+  background-color: #e3e5fd8f;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+
+  pre[class*="language-"] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left;
+    min-width: 100%;
+    &.line-numbers {
+      padding-left: 2.8em;
+      padding-right: 1em;
+    }
+  }
+}
+
+/* Sehll Prompt */
+.command-line-prompt > span {
+  &:before {
+    color: #999;
+    content: " ";
+    display: block;
+    padding-right: 0.8em;
+  }
+
+  &[data-user]:before {
+    content: "[" attr(data-user) "@" attr(data-host) "] $";
+  }
+
+  &[data-user="root"]:before {
+    content: "[" attr(data-user) "@" attr(data-host) "] #";
+  }
+
+  &[data-prompt]:before {
+    content: attr(data-prompt);
+  }
+}
+/* Code Title */
+.gatsby-code-title {
+  background: #b5b7ca8f;
+  color: #b38383;
+  margin-bottom: -0.65em;
+  padding: 0.7rem 1.05rem;
+  font-size: 0.8em;
+  line-height: 0.2;
+  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  display: table;
+}
