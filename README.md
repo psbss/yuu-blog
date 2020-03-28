@@ -33,5 +33,21 @@ Gatsby 関連コマンド
 独自コマンド
 ```bash
 # push remote master 後生成物が再度masterにpushされたときのローカルブランチ切り替え
-    ./changebranch.sh
+    sh changebranch.sh
+# New article
+    sh newarticle.sh
 ```
+
+### Make new article
+新しい記事を作るときに毎回フォルダ作成から行うのは億劫なので、コマンドで行えるようにした。
+```bash
+sh newarticle.sh [Article slug] [Article title]
+```
+
+- [Article slug] : ```content/blog/```に作成するディレクトリ名（ページ上のスラッグとなる部分）
+- [Article title] : ```index.md``` ヘッダに記入するタイトル
+
+```index.md``` のヘッダに記入される情報
+- title: [Article slug]
+- date: シェルスクリプト実行年月日
+- description: 空欄
