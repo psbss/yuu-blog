@@ -60,7 +60,11 @@ const Layout = ({ location, title, children }) => {
     >
       <header>{header}</header>
       <main>{children}</main>
-      <footer>
+      <footer
+        style={{
+          marginTop: `5rem`,
+        }}
+      >
         Copyright © Yuki Uehara , {new Date().getFullYear()}
       </footer>
     </div>
