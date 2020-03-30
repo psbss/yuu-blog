@@ -21,6 +21,7 @@ const BlogIndex = ({ data, location }) => {
             <header>
               <h3
                 style={{
+                  marginTop: `2.2rem`,
                   marginBottom: rhythm(1 / 4),
                 }}
               >
@@ -30,13 +31,6 @@ const BlogIndex = ({ data, location }) => {
               </h3>
               <small>{node.frontmatter.date}</small>
             </header>
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
           </article>
         )
       })}
