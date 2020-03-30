@@ -1,17 +1,12 @@
 import Typography from "typography"
-import Wordpress2016 from "typography-theme-wordpress-2016"
+import Theme from "typography-theme-stow-lake"
 
-Wordpress2016.overrideThemeStyles = () => {
-  return {
-    "a.gatsby-resp-image-link": {
-      boxShadow: `none`,
-    },
-  }
-}
-
-delete Wordpress2016.googleFonts
-
-const typography = new Typography(Wordpress2016)
+Theme.googleFonts.push({
+  name: "Noto+Sans+JP",
+  styles: ["400"],
+})
+Theme.bodyFontFamily = ["Noto Sans JP", "Roboto", "serif"]
+const typography = new Typography(Theme)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {
