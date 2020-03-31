@@ -1,5 +1,82 @@
 ---
 title: "Gatsby.jsのfontを変更する方法(日本語フォント)"
 date: "2020-03-30"
-description: ""
+description: "せっかくブログを作ったのに日本語表示が汚い...そんな問題をTypography.jsでサクッと解決します。"
 ---
+Gatsby.jsは英語圏で作られた静的サイトジェネレーターなので初期は英字フォントが適用されています。いい感じのフォントではありますが、日本語を利用すると違和感の塊なので日本語フォントを適用することにしました。
+
+## Agenda
+1. Typography.jsとは
+2. 下準備
+   1. パッケージのインストール
+   2. 日本語フォントを選ぶ
+   3. ブログの文字装飾テーマを選ぶ
+3. 設置
+4. ソースコード
+
+## Typography.js とは
+Typography.jsとはブログのイメージを大きく左右するフォント周りの細かい設定をサクッと解決してくれるAPIです。Gatsby.js公式でも推奨しています。
+
+「そんなの利用しない！俺は我流で作り上げる」
+
+というのも不可能ではないですが、Gatsby.jsの特性上非常に面倒な作業となってしまうので、ここではTypography.jsを利用して解決します。
+
+このAPIではフォント周り、文字のsizeやweight, margin, paddingなどを設定してくれます。
+
+## 下準備
+### パッケージのインストール
+まずはパッケージのインストールを行います。
+```bash
+# yarnでインストールする場合
+yarn add typography gatsby-plugin-typography
+
+# npmでインストールする場合
+npm install --save typography gatsby-plugin-typography
+```
+
+インストールが正常に完了したら ```gatsby-config.js``` にパッケージ情報を追加します。
+```js:title=gatsby-config.js
+{
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+},
+```
+
+```pathToConfigModule``` はTypographyの設定を記入するために用いるファイルのパスを指定します。基本的にはデフォルトで設定されている上記のパスで問題ないです。なにか問題のある人だけ変更してください。
+
+ここまでで、ひとまず基礎は出来上がりました。次に利用するフォントと文字装飾テーマを選択します。
+
+### 日本語フォントを選ぶ
+
+
+### ブログの文字装飾テーマを選ぶ
+
+## 設置
+```js:title=typography.js
+import Typography from "typography"
+import Theme from "typography-theme-stow-lake"
+
+Theme.googleFonts.push({
+  name: "Noto+Sans+JP",
+  styles: ["400"],
+})
+Theme.bodyFontFamily = ["Noto Sans JP", "Roboto", "serif"]
+const typography = new Typography(Theme)
+
+// Hot reload typography in development.
+if (process.env.NODE_ENV !== `production`) {
+  typography.injectStyles()
+}
+
+export default typography
+export const rhythm = typography.rhythm
+export const scale = typography.scale
+
+```
+## ソースコード
+[https://github.com/psbss/yuu-blog/tree/master/blog](https://github.com/psbss/yuu-blog/tree/master/blog)
+
+## 参考
+[https://qiita.com/MikihiroSaito/items/1ab9d5eeea66a163648b](https://qiita.com/MikihiroSaito/items/1ab9d5eeea66a163648b)
