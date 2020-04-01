@@ -49,9 +49,27 @@ npm install --save typography gatsby-plugin-typography
 ここまでで、ひとまず基礎は出来上がりました。次に利用するフォントと文字装飾テーマを選択します。
 
 ### 日本語フォントを選ぶ
+日本語フォントには [Google Fonts](https://fonts.google.com/?subset=japanese) を利用して表示します。 
+
+![Google fonts で日本語対応フォントを表示する](./googlefonts_ja_useja.png)
+
+選択すると、そのフォントのより詳細なページが表示されます。ここで、利用するフォントのWeightを選択してリンク用コードを表示します。
+
+「画像」
+
+でてきたコードの強調表示している部分をコピーしておきます。
+
+\<link href="https://fonts.googleapis.com/css2?family=```Noto+Sans+JP```&display=swap" rel="stylesheet">
 
 
 ### ブログの文字装飾テーマを選ぶ
+次に利用する文字装飾テーマを選びます。この部分は利用したくない人はスキップでも構いません。
+
+Typography.js には表示確認用のサイトが用意されています。このページを利用してテーマを決めます。
+
+[表示確認用サイト](https://kyleamathews.github.io/typography.js/)
+
+
 
 ## 設置
 ```js:title=typography.js
@@ -59,6 +77,7 @@ import Typography from "typography"
 import Theme from "typography-theme-stow-lake"
 
 Theme.googleFonts.push({
+// Noto Sans JP フォントを利用する
   name: "Noto+Sans+JP",
   styles: ["400"],
 })
