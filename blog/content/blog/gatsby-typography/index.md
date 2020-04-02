@@ -52,29 +52,47 @@ npm install --save typography gatsby-plugin-typography
 日本語フォントには [Google Fonts](https://fonts.google.com/?subset=japanese) を利用して表示します。 
 
 ![Google fonts で日本語対応フォントを表示する](./googlefonts_ja_useja.png)
+日本語に限定して表示する
+
+![Google fonts で利用するフォントを選択する](googlefonts_ja_selectstyles.png)
+利用するフォントを選択したら、文字の太さを選択する。ここは```Regular```を選びましょう。
 
 選択すると、そのフォントのより詳細なページが表示されます。ここで、利用するフォントのWeightを選択してリンク用コードを表示します。
 
-「画像」
+![Google fonts 選択したフォントを表示する](googlefonts_ja_openwindow.png)
+画面右上のアイコンから選択したフォントを表示できます
 
-でてきたコードの強調表示している部分をコピーしておきます。
-
-\<link href="https://fonts.googleapis.com/css2?family=```Noto+Sans+JP```&display=swap" rel="stylesheet">
-
+![Google fonts 利用するフォントのコードを取得する](googlefonts_ja_usefonts.png)
+Embed(=埋め込む)を選択するとコードが表示されるので、青いマーカーの引いてある部分をコピーします。
 
 ### ブログの文字装飾テーマを選ぶ
 次に利用する文字装飾テーマを選びます。この部分は利用したくない人はスキップでも構いません。
 
 Typography.js には表示確認用のサイトが用意されています。このページを利用してテーマを決めます。
 
-[表示確認用サイト](https://kyleamathews.github.io/typography.js/)
+https://kyleamathews.github.io/typography.js/
 
+![Typography でテーマを選ぶ](typography_theme.png)
+右側のメニューからテーマを選ぶことができます。
 
+![テーマのインストール](typography_pickuptheme.png)
+テーマの配布先(Github)に移動します。
+
+※なぜか配布先が表示されていないテーマがあります。
+
+今回は```moraga```というテーマを利用します。  
+npmでのインストール方法はReadmeに書いてあることを参照しながらします。
+
+```bash:title=bash
+npm install --save typography typography-theme-moraga
+```
 
 ## 設置
+あとはサクッと設置すれば終了です。
+
 ```js:title=typography.js
 import Typography from "typography"
-import Theme from "typography-theme-stow-lake"
+import Theme from "typography-theme-moraga"
 
 Theme.googleFonts.push({
 // Noto Sans JP フォントを利用する
@@ -94,6 +112,9 @@ export const rhythm = typography.rhythm
 export const scale = typography.scale
 
 ```
+
+テーマ使って修正したい場合はcss書いて修正します。方法はまた別の記事にでも載せます....
+
 ## ソースコード
 [https://github.com/psbss/yuu-blog/tree/master/blog](https://github.com/psbss/yuu-blog/tree/master/blog)
 
