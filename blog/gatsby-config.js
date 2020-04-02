@@ -3,7 +3,7 @@ module.exports = {
     title: `Inquisitiveness`,
     author: {
       name: `Yuki Uehara`,
-      summary: `東京に行くと25歳と言われる地方学生エンジニア`,
+      summary: `20歳なのに東京に行くと25歳と言われる地方学生エンジニア`,
     },
     description: `地方で生活している学生の日々勉強した内容や参加したイベント情報など`,
     siteUrl: `https://blog.ue-y.me/`,
