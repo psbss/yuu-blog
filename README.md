@@ -23,7 +23,7 @@ Gatsby 関連コマンド
 # Develop Server
     gatsby develop
 
-# Make public
+# Public Server
     gatsby serve
 
 # Delete .cache/ public/ directory
@@ -39,7 +39,7 @@ Gatsby 関連コマンド
 ```
 
 ### Make new article
-新しい記事を作るときに毎回フォルダ作成から行うのは億劫なので、コマンドで行えるようにした。
+新しい記事を作るときに毎回フォルダ作成から行うのは面倒なので、コマンドで行えるようにした。
 ```bash
 sh newarticle.sh [Article slug] [Article title]
 ```
