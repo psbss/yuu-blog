@@ -35,6 +35,7 @@ const SEO = ({ description, lang, meta, title, pagePath }) => {
         lang,
       }}
       title={title}
+      pagePath={pagePath}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
