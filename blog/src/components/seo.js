@@ -84,6 +84,7 @@ SEO.defaultProps = {
   lang: `ja`,
   meta: [],
   description: ``,
+  pagePath: ``,
 }
 
 SEO.propTypes = {
@@ -91,6 +92,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  pagePath: PropTypes.string,
 }
 
 export default SEO
