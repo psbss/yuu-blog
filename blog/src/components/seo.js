@@ -57,7 +57,8 @@ const SEO = ({ description, lang, meta, title, pagePath }) => {
         {
           property: `og:image`,
           content:
-            pagePath + "thumbnail.png",
+            // pagePath + "thumbnail.png",
+            "https://blog.ue-y.me/img/thumbnail.png",
         },
         {
           name: `twitter:card`,
