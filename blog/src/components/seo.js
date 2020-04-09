@@ -56,9 +56,7 @@ const SEO = ({ description, lang, meta, title, pagePath }) => {
         },
         {
           property: `og:image`,
-          content:
-            // pagePath + "thumbnail.png",
-            "https://blog.ue-y.me/img/thumbnail.png",
+          content: pagePath,
         },
         {
           name: `twitter:card`,
@@ -85,7 +83,7 @@ SEO.defaultProps = {
   lang: `ja`,
   meta: [],
   description: ``,
-  pagePath: ``,
+  pagePath: `https://blog.ue-y.me/img/thumbnail.png`,
 }
 
 SEO.propTypes = {
