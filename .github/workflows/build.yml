@@ -16,25 +16,30 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: npm install and build
+      # 必要なパッケージのインストール
+      - name: npm install
         run: |
           cd blog
           npm ci
           npm run build --if-present
         env:
           CI: true
+      # Artifactのアップロード
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
           name: public
           path: blog/public
+      # SSHキーのインストール
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2.0.1
         with:
           key: ${{ secrets.SSH_KEY }}
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      # rsyncの実行
       - name: rsync
         run: rsync -auvz --delete public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+      # 生成物のcommit
       - name: commit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
