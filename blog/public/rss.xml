@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Inquisitiveness]]></title><description><![CDATA[地方で生活している学生の日々勉強した内容や参加したイベント情報など]]></description><link>https://blog.ue-y.me</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 09 Apr 2020 15:54:27 GMT</lastBuildDate><item><title><![CDATA[Gatsby.jsでタイトルからOGP用画像を生成する方法]]></title><description><![CDATA[Gatsby.jsでタイトルからOGP用画像を生成する方法 生成するとこんな感じの画像が出来上がります  Gatsby.jsに色々な機能を実装していますが、今回はOGP用の画像を自動生成します。OGP？なにそれという方に簡単に説明すると、OGPはOpen Graph…]]></description><link>https://blog.ue-y.me/gatsby-ogp/</link><guid isPermaLink="false">https://blog.ue-y.me/gatsby-ogp/</guid><pubDate>Thu, 09 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Gatsby.jsでタイトルからOGP用画像を生成する方法&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Inquisitiveness]]></title><description><![CDATA[地方で生活している学生の日々勉強した内容や参加したイベント情報など]]></description><link>https://blog.ue-y.me</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 09 Apr 2020 16:24:04 GMT</lastBuildDate><item><title><![CDATA[Gatsby.jsでタイトルからOGP用画像を生成する方法]]></title><description><![CDATA[Gatsby.jsでタイトルからOGP用画像を生成する方法 生成するとこんな感じの画像が出来上がります  Gatsby.jsに色々な機能を実装していますが、今回はOGP用の画像を自動生成します。OGP？なにそれという方に簡単に説明すると、OGPはOpen Graph…]]></description><link>https://blog.ue-y.me/gatsby-ogp/</link><guid isPermaLink="false">https://blog.ue-y.me/gatsby-ogp/</guid><pubDate>Thu, 09 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;Gatsby.jsでタイトルからOGP用画像を生成する方法&lt;/h1&gt;
 &lt;p&gt;生成するとこんな感じの画像が出来上がります&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -132,16 +132,7 @@
 &lt;p&gt;Noto Sans CJK JP をダウンロードして、解凍します。上記の設定では中に入っている&lt;code class=&quot;language-text&quot;&gt;NotoSansCJKjp-Regular.otf&lt;/code&gt;と&lt;code class=&quot;language-text&quot;&gt;NotoSansCJKjp-Bold.otf&lt;/code&gt;のみ利用しているので、この2つのファイルを&lt;code class=&quot;language-text&quot;&gt;./src/utils/fonts/&lt;/code&gt;に配置します。&lt;/p&gt;
 &lt;p&gt;これで準備完了です！&lt;/p&gt;
 &lt;p&gt;Gatsby build でpublicディレクトリ内に生成された画像が配置されます。&lt;/p&gt;
-&lt;p&gt;OGPの実際の配置方法は次の記事で、、、&lt;/p&gt;</content:encoded></item><item><title><![CDATA[家計簿を14年つけている大学生が完全キャッシュレス化した方法]]></title><description><![CDATA[家計簿歴14年 初めは面倒で、書かない日もあった気がする… 多くの人が子供のときなどに、お小遣い帳や家計簿に挑戦したと思います。でも続けることができるのは極々一部で私も一番最初はサボりがちでした。 小学校…]]></description><link>https://blog.ue-y.me/totally-cashless-student/</link><guid isPermaLink="false">https://blog.ue-y.me/totally-cashless-student/</guid><pubDate>Wed, 08 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;家計簿歴14年&lt;/h2&gt;
-&lt;p&gt;初めは面倒で、書かない日もあった気がする…&lt;/p&gt;
-&lt;p&gt;多くの人が子供のときなどに、お小遣い帳や家計簿に挑戦したと思います。でも続けることができるのは極々一部で私も一番最初はサボりがちでした。&lt;/p&gt;
-&lt;p&gt;小学校1年生の正月、父親が手作りのお小遣い帳を作ってくれました。父親の言い分としては「小学生になったのだからお金の管理は自分でしなさい、ちゃんとつけないとお小遣いを渡さない」とのことでした。&lt;/p&gt;
-&lt;p&gt;小学生では収支件数は少ないので1冊目のお小遣い帳を使い切るのに3年かかりました。&lt;/p&gt;
-&lt;h3&gt;大学生が行う家計簿のつけ方&lt;/h3&gt;
-&lt;h2&gt;キャッシュレスになった理由は「〇〇が面倒だから」&lt;/h2&gt;
-&lt;h2&gt;“完全”キャッシュレスになる方法&lt;/h2&gt;
-&lt;h3&gt;メインの決済方法&lt;/h3&gt;
-&lt;h2&gt;今後の予定&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Gatsby.jsのfontを変更する方法(日本語フォント)]]></title><description><![CDATA[Gatsby.jsは英語圏で作られた静的サイトジェネレーターなので初期は英字フォントが適用されています。いい感じのフォントではありますが、日本語を利用すると違和感の塊なので日本語フォントを適用することにしました。 Agenda Typography.js…]]></description><link>https://blog.ue-y.me/gatsby-typography/</link><guid isPermaLink="false">https://blog.ue-y.me/gatsby-typography/</guid><pubDate>Thu, 02 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Gatsby.jsは英語圏で作られた静的サイトジェネレーターなので初期は英字フォントが適用されています。いい感じのフォントではありますが、日本語を利用すると違和感の塊なので日本語フォントを適用することにしました。&lt;/p&gt;
+&lt;p&gt;OGPの実際の配置方法は次の記事で、、、&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Gatsby.jsのfontを変更する方法(日本語フォント)]]></title><description><![CDATA[Gatsby.jsは英語圏で作られた静的サイトジェネレーターなので初期は英字フォントが適用されています。いい感じのフォントではありますが、日本語を利用すると違和感の塊なので日本語フォントを適用することにしました。 Agenda Typography.js…]]></description><link>https://blog.ue-y.me/gatsby-typography/</link><guid isPermaLink="false">https://blog.ue-y.me/gatsby-typography/</guid><pubDate>Thu, 02 Apr 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Gatsby.jsは英語圏で作られた静的サイトジェネレーターなので初期は英字フォントが適用されています。いい感じのフォントではありますが、日本語を利用すると違和感の塊なので日本語フォントを適用することにしました。&lt;/p&gt;
 &lt;h2&gt;Agenda&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Typography.jsとは&lt;/li&gt;
