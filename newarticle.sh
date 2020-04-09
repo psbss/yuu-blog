@@ -11,4 +11,5 @@ echo '---
 title: "'$2'"
 date: "'$var_date'"
 description: ""
+pagepath: "https://blog.ue-y.me/'$1'/thumbnail.png"
 ---' >> ./blog/content/blog/$1/index.md

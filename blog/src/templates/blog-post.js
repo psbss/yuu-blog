@@ -21,7 +21,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        pagePath={location.href}
+        pagePath={post.frontmatter.pagepath}
       />
       <article>
         <header>
@@ -107,6 +107,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY-MM-DD")
         description
+        pagepath
       }
     }
   }
