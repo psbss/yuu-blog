@@ -2,6 +2,7 @@
 title: "Github actions+Gatsby.jsで最高のブログ環境を構築する"
 date: "2020-03-22"
 description: "試行錯誤"
+pagepath: "https://blog.ue-y.me/myblog/thumbnail.png"
 ---
 
 ブログを新しくしました。素晴らしくナウい構成だと思います。  

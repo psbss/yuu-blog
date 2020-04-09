@@ -2,6 +2,7 @@
 title: "近大サミット2019に参加してきた。挑戦し続ける大学が提案する新しい教育"
 date: "2019-06-20"
 description: "近畿大学で毎年開催されている学生と既卒生のための新しい講義『近大サミット2019』が開催された。参加したセッションを紹介していくとともに、所見をアウトプットしていく。"
+pagepath: "https://blog.ue-y.me/kindai-summit-2019/thumbnail.png"
 ---
 
 ※ この記事は私がRepresentativeを務めているLinkbayesにて投稿した記事を移管したものです。
