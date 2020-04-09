@@ -4,7 +4,6 @@ date: "2020-04-09"
 description: "Gatsby.jsでSNSシェアボタンを設置したのに、OGP用画像を毎回作るのが面倒なのでビルド時に一緒に作れるようにしました。"
 pagepath: "https://blog.ue-y.me/gatsby-ogp/thumbnail.png"
 ---
-# Gatsby.jsでタイトルからOGP用画像を生成する方法
 生成するとこんな感じの画像が出来上がります
 
 ![生成した画像](./gatsbyjs_ogp_image.png)
