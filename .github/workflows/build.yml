@@ -38,7 +38,7 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       # rsyncの実行
       - name: rsync
-        run: rsync -auvz --delete public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+        run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
       # 生成物のcommit
       - name: commit
         env:
