@@ -48,7 +48,8 @@
   padding: 0.7rem 1.05rem;
   font-size: 0.8em;
   line-height: 0.2;
-  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
+    Courier New, monospace;
   font-weight: 600;
   border-radius: 8px 8px 0 0;
   display: table;
@@ -78,6 +79,22 @@ body {
       h#{$cnr} {
         color: $link-color;
       }
+    }
+    // plugin
+    .gatsby {
+      // code styles
+      $code-bg-color: #d4d4d4;
+      $code-title-color: #2e445f;
+      &-code-title {
+        background-color: $code-title-color;
+      }
+      &-highlight {
+        background-color: $code-bg-color;
+      }
+    }
+    blockquote {
+      border-color: #1d95e0;
+      color: #797d82;
     }
   }
 }
