@@ -58,3 +58,26 @@
 li {
   margin-bottom: calc(0.6rem / 2);
 }
+
+// Darkmode Settiongs
+body {
+  $bg-color: #15202b;
+  $link-color: #1b95e0;
+  &.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease;
+  }
+  &.dark-mode {
+    background-color: $bg-color;
+    color: #ffffff;
+    a {
+      color: $link-color;
+    }
+    @for $cnr from 1 to 6 {
+      h#{$cnr} {
+        color: $link-color;
+      }
+    }
+  }
+}

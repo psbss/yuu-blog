@@ -156,5 +156,6 @@ module.exports = {
         showSpinner: false,
       },
     },
+    `gatsby-plugin-use-dark-mode`,
   ],
 }
