@@ -64,6 +64,9 @@ li {
 body {
   $bg-color: #15202b;
   $link-color: #1b95e0;
+  .navbar {
+    background-color: #1b2938;
+  }
   &.light-mode {
     background-color: #ffffff;
     color: #000000;
@@ -96,5 +99,69 @@ body {
       border-color: #1d95e0;
       color: #797d82;
     }
+  }
+}
+
+.header {
+  display: flex;
+}
+
+.dark-mode-toggle {
+  margin: 0 auto;
+  padding-top: 0.7em;
+  position: relative;
+  & > button {
+    font-size: 1.2em;
+    background: none;
+    border: none;
+    color: #ffe600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:last-child {
+      color: #666;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+input[type='checkbox'].dmcheck {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+
+  &:checked + label {
+    left: 60px;
+    top: 25px;
+    background-color: #ffffff;
+  }
+
+  &:focus-visible {
+    outline: solid 2px white;
+  }
+
+  & + label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: absolute;
+    left: 32px;
+    top: 25px;
+    background: #fff;
+    opacity: 0.9;
+    background-color: #000000;
   }
 }
