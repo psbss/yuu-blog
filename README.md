@@ -7,12 +7,13 @@ Gatsby.js に実装されているコマンドはそのまま利用すること�
 Github Actions にて ビルド -> デプロイ を行っているので、場所や端末を気にすることなくどこでもブログがかけます。
 
 # Feature
-Github Actions を活用することで、remote/masterにpushすると自動でbuild -> Deploy -> Artifact(生成物)を再度masterにpushしてくれます。
+Github Actions を活用することで、remote/masterにpushすると自動でbuild -> Deployをしてくれます。
 ここのロジックは(```.github/workflows/build.yaml```)にて定義。
 
-最後にmasterに生成物をpushし直すのは次回ビルド時に変更したもののみビルドし直すことで効率を高めるためです。
+~~最後にmasterに生成物をpushし直すのは次回ビルド時に変更したもののみビルドし直すことで効率を高めるためです。~~  
+廃止しました、理由としては差分のみのビルドを行うよりも再ビルドしたほうがコストが安いからです。
 
-プロジェクト管理は Github Projects にて行っています。
+プロジェクト管理は ~~Github Projects~~ Github issues にて行っています。
 
 ## Command
 Gatsby 関連コマンド
