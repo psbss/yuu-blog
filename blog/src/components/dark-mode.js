@@ -1,13 +1,13 @@
-import React from `react`;
-import useDarkMode from `use-dark-mode`;
+import React from "react"
+import useDarkMode from "use-dark-mode"
 
-import Toggle from './Toggle';
+import Toggle from "./toggle"
 
 const DarkModeToggle = () => {
   const darkMode = useDarkMode(false);
 
   return (
-    <div>
+    <div className="dark-mode-toggle">
       <button type="button" onClick={darkMode.disable}>
         ☀
       </button>
@@ -16,7 +16,7 @@ const DarkModeToggle = () => {
         ☾
       </button>
     </div>
-  );
+  )
 };
 
 export default DarkModeToggle;
