@@ -6,4 +6,4 @@ git branch -D master
 git branch -D draft
 git push --delete origin draft
 git branch draft
-git checkout -b master
+git checkout -b draft
