@@ -31,9 +31,8 @@ base_dir$ touch README.md
 
 まずはベースリポジトリ(base_dir)にリモートリポジトリと登録しましょう。リモートリポジトリと聞くとGithub等のサーバ上のリポジトリを想像される方いるでしょう。別にサーバに無くて、ローカルの別のリポジトリでもリモートリポジトリとして登録することができます。
 
-- ベースリポジトリにリモートリポジトリとして対象のリポジトリを登録する
-
 ```bash
+# ベースリポジトリにリモートリポジトリとして対象のリポジトリを登録する
 base_dir$ git remote add rimote_repo ../remote_dir
 ```
 
@@ -66,17 +65,15 @@ base_dir$ git remote add rimote_repo ../remote_dir
     └── README.md
 ```
 
-- ベースリポジトリ内からリモートリポジトリの中身を取得します
-
 ```bash
+# ベースリポジトリ内からリモートリポジトリの中身を取得する
 base_dir$ git fetch rimote_repo
 ```
 
 取得すると、ベースリポジトリ内に新しいブランチとして登録されるので、マージします。
 
-- リモートリポジトリの内容をマージする
-
 ```bash
+# リモートリポジトリの内容をマージする
 base_dir$ git merge --allow-unrelated-histories rimote_repo/master
 ```
 
@@ -84,12 +81,13 @@ base_dir$ git merge --allow-unrelated-histories rimote_repo/master
 
 これは Git2.9 より無関係な２つのブランチをmergeするときには```--allow-unrelated-histories```オプションをつけないとmergeできなくなったからです。
 
-Doc:[https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories)
+Doc: [https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---allow-unrelated-histories)
 
 これで２つの異なるリポジトリを統合することができました
 
 ## 補足
-参考：
+参考：  
 [Git で複数のリポジトリをまとめたり、逆に切り出したりする](https://qiita.com/uasi/items/77d41698630fef012f82)
-統合する素材となるリポジトリのコミットユーザやメールアドレスを変更する場合は以下の記事を参照：
+
+統合する素材となるリポジトリのコミットユーザやメールアドレスを変更する場合は以下の記事を参照：  
 [ユーザを間違えたままgithubにpushしたときの書き換え](https://qiita.com/nagito25/items/2463a677e46210c6a90f)
