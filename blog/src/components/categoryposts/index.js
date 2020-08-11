@@ -5,32 +5,33 @@ const CategoryPosts = (props) => (
   <StaticQuery
     query={graphql`
     query{
-      allMarkdownRemark{
-        edges{
-          node{
-            frontmatter {
-              pagetype
-              category
-              title
-              date
+        allMarkdownRemark{
+          edges{
+            node{
+              frontmatter{
+                pagetype
+                category
+                title
+                date
+              }
+              excerpt
             }
-            excerpt
           }
         }
       }
+    `
     }
-  `}
 
     render={(data) => {
       const postlists = data.allMarkdownRemark.edges
       const posts = postlists.filter((category) => {
-        retrun(category.node.frontmatter.category === props.category)
+        return (category.node.frontmatter.category === props.category)
       })
 
       return (
         <div>
           {posts.map(({ node }) => {
-            retrun(
+            return (
               <div key={node.frontmatter.title}>
                 <p>{node.frontmatter.date}</p>
                 <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
