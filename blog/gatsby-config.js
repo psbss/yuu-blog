@@ -117,7 +117,6 @@ module.exports = {
         trackingId: `UA-114688805-9`,
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -139,7 +138,15 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [
+          require("tailwindcss"),
+          require("./tailwind.config.js"),
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
