@@ -47,7 +47,8 @@
   },
   "devDependencies": {
     "gatsby-remark-code-titles": "^1.1.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "tailwindcss": "^1.7.6"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
