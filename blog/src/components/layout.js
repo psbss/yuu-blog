@@ -11,21 +11,8 @@ const Layout = ({ location, title, children }) => {
   if (location.pathname === rootPath) {
     header = (
       <div className="header">
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
+        <h1>
+          <Link>
             {title}
           </Link>
         </h1>
@@ -35,20 +22,8 @@ const Layout = ({ location, title, children }) => {
   } else {
     header = (
       <div className="header">
-        <h1
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
+        <h1>
+          <Link>
             {title}
           </Link>
         </h1>
@@ -57,21 +32,10 @@ const Layout = ({ location, title, children }) => {
     )
   }
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
+    <div>
       <header>{header}</header>
       <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `5rem`,
-        }}
-      >
+      <footer>
         Copyright © Yuki Uehara , {new Date().getFullYear()}
       </footer>
     </div>
