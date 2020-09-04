@@ -11,7 +11,7 @@ const Layout = ({ location, title, children }) => {
   if (location.pathname === rootPath) {
     header = (
       <div className="header">
-        <h1>
+        <h1 className="text-5xl">
           <Link>
             {title}
           </Link>
