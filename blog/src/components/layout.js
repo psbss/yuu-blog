@@ -31,13 +31,16 @@ const Layout = ({ location, title, children }) => {
       </div>
     )
   }
+
   return (
     <div>
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
-        Copyright © Yuki Uehara , {new Date().getFullYear()}
-      </footer>
+      <div>
+        <header>{header}</header>
+      </div>
+      <div>
+        <main>{children}</main>
+        <footer>Copyright © Yuki Uehara , {new Date().getFullYear()}</footer>
+      </div>
     </div>
   )
 }
