@@ -33,14 +33,14 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div>
+    <div className="container mx-auto">
       <div>
         <header>{header}</header>
       </div>
-      <div>
+      <div className="px-4">
         <main>{children}</main>
-        <footer>Copyright © Yuki Uehara , {new Date().getFullYear()}</footer>
       </div>
+      <footer>Copyright © Yuki Uehara , {new Date().getFullYear()}</footer>
     </div>
   )
 }
