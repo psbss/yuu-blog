@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
+import Bio from "../components/bio"
 import DarkModeToggle from "./dark-mode"
 
 const Layout = ({ location, title, children }) => {
@@ -37,7 +38,8 @@ const Layout = ({ location, title, children }) => {
       <div>
         <header>{header}</header>
       </div>
-      <div className="px-4">
+      <div className="px-4 flex">
+        <Bio />
         <main>{children}</main>
       </div>
       <footer>Copyright © Yuki Uehara , {new Date().getFullYear()}</footer>
