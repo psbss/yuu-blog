@@ -40,7 +40,7 @@ const Layout = ({ location, title, children }) => {
       </div>
       <div className="px-4 flex">
         <Bio />
-        <main>{children}</main>
+        <main className="w-2/3">{children}</main>
       </div>
       <footer>Copyright © Yuki Uehara , {new Date().getFullYear()}</footer>
     </div>
