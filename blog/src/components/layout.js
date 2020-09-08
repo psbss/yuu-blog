@@ -35,9 +35,7 @@ const Layout = ({ location, title, children }) => {
 
   return (
     <div className="container mx-auto">
-      <div>
-        <header>{header}</header>
-      </div>
+      <header class="mb-6 mt-4">{header}</header>
       <div className="px-4 flex">
         <Bio />
         <main className="w-2/3">{children}</main>
