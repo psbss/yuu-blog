@@ -40,7 +40,7 @@ const Layout = ({ location, title, children }) => {
         <Bio />
         <main className="w-2/3">{children}</main>
       </div>
-      <footer>Copyright © Yuki Uehara , {new Date().getFullYear()}</footer>
+      <footer className="mt-6 mb-4 text-center">Yuki Uehara , {new Date().getFullYear()}</footer>
     </div>
   )
 }
