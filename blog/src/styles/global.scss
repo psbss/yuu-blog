@@ -48,8 +48,7 @@
   padding: 0.7rem 1.05rem;
   font-size: 0.8em;
   line-height: 0.2;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-weight: 600;
   border-radius: 8px 8px 0 0;
   display: table;
@@ -127,7 +126,7 @@ body {
   }
 }
 
-input[type='checkbox'].dmcheck {
+input[type="checkbox"].dmcheck {
   width: 40px;
   height: 10px;
   background: #555;
@@ -163,5 +162,11 @@ input[type='checkbox'].dmcheck {
     background: #fff;
     opacity: 0.9;
     background-color: #000000;
+  }
+}
+
+.important {
+  &-block {
+    display: block !important;
   }
 }

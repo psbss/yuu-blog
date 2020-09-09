@@ -41,7 +41,7 @@ const Bio = () => {
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
-        className="block my-0 mx-auto rounded-full"
+        className="important-block my-0 mx-auto rounded-full"
       />
       <p>
         Written by <strong>{author.name}</strong>(<a href={`https://twitter.com/${social.twitter}`}>@psnzbss</a>)
