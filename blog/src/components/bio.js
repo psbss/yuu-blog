@@ -43,12 +43,9 @@ const Bio = () => {
         alt={author.name}
         className="important-block my-0 mx-auto rounded-full"
       />
-      <p>
-        Written by <strong>{author.name}</strong>(<a href={`https://twitter.com/${social.twitter}`}>@psnzbss</a>)
-        {`  `}
-        <br />
-        {author.summary}
-      </p>
+      <p className="text-xl text-center mt-6">{author.name}</p>
+      <p className="text-center text-sm">(<a href={`https://twitter.com/${social.twitter}`}>@psnzbss</a>)</p>
+      <p className="mt-3">{author.summary}</p>
     </div>
   )
 }
