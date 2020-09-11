@@ -15,12 +15,12 @@ const BlogIndex = ({ data, location }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
           <article className="mb-6" key={node.fields.slug}>
-            <h3 className="text-lg">
+            <h3 className="text-lg text-blue-800">
               <Link to={node.fields.slug}>
                 {title}
               </Link>
             </h3>
-            <small>{node.frontmatter.date}</small>
+            <p className="mx-4 text-xs">{node.frontmatter.date}</p>
           </article>
         )
       })}
