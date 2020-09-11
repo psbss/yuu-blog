@@ -37,7 +37,7 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div className="w-1/3">
+    <div className="w-1/3 mr-8">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
