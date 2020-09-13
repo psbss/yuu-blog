@@ -8,13 +8,13 @@ const DarkModeToggle = () => {
   const darkMode = useDarkMode(false);
 
   return (
-    <div className="">
-      <button type="button" onClick={darkMode.disable}>
-        <img src={sunSvg} width="25px"></img>
+    <div className="flex p-4 ml-auto mr-0 relative">
+      <button className="mr-2" type="button" onClick={darkMode.disable}>
+        <img src={sunSvg} width="25px" className="mb-0"></img>
       </button>
       <Toggle checked={darkMode.value} onChange={darkMode.toggle} />
-      <button type="button" onClick={darkMode.enable}>
-        <img src={moonSvg} width="25px"></img>
+      <button className="ml-2" type="button" onClick={darkMode.enable}>
+        <img src={moonSvg} width="25px" className="mb-0"></img>
       </button>
     </div>
   )
