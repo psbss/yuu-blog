@@ -122,10 +122,6 @@ input[type="checkbox"].dmcheck {
     background-color: #ffffff;
   }
 
-  &:focus-visible {
-    outline: solid 2px white;
-  }
-
   & + label {
     display: inline-block;
     width: 18px;
@@ -138,6 +134,15 @@ input[type="checkbox"].dmcheck {
     top: 23px;
     opacity: 0.9;
     background-color: #000000;
+  }
+}
+
+.svg {
+  &-sun {
+    background-color: #f39c12;
+  }
+  &-moon {
+    background-color: #f1c40f;
   }
 }
 

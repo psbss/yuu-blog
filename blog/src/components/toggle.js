@@ -8,7 +8,7 @@ const Toggle = ({ checked, onChange }) => (
       checked={checked}
       onChange={onChange}
       id="dmcheck" />
-    <label htmlFor="dmcheck" />
+    <label htmlFor="dmcheck" className="focus:outline-none" />
   </span >
 )
 
