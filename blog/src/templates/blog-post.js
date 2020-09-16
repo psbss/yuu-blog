@@ -33,11 +33,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </div>
         <section className="leading-7" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
-        <TwitterShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
-          <TwitterIcon round size={32} />
+        <TwitterShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+          <TwitterIcon round size={45} />
         </TwitterShareButton>
-        <LineShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
-          <LineIcon round size={32} />
+        <LineShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+          <LineIcon round size={45} />
         </LineShareButton>
         <footer>
           <Bio />
