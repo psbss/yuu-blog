@@ -23,15 +23,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         pagePath={post.frontmatter.pagepath}
       />
       <article>
-        <header>
-          <h1>
+        <div className="mb-6">
+          <h1 className="text-2xl">
             {post.frontmatter.title}
           </h1>
-          <p>
+          <p className="text-sm">
             {post.frontmatter.date}
           </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+        <section className="leading-7" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <TwitterShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
           <TwitterIcon round size={32} />
