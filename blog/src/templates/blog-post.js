@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import ArticleLayout from "../components/article"
 import SEO from "../components/seo"
 import {
   TwitterShareButton,
@@ -16,7 +16,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   return (
-    <Layout location={location} title={siteTitle}>
+    <ArticleLayout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -62,7 +62,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-    </Layout>
+    </ArticleLayout>
   )
 }
 
