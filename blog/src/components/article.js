@@ -15,7 +15,7 @@ const ArticleLayout = ({ title, children }) => {
           <DarkModeToggle />
         </div>
       </header>
-      <main className="">
+      <main className="mx-40">
         {children}
       </main>
       <footer>Yuki Uehara , {new Date().getFullYear()}</footer>
