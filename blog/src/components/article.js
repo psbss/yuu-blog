@@ -8,7 +8,7 @@ const ArticleLayout = ({ title, children }) => {
       <header className="mb-6 mx-2 mt-4">
         <div className="header">
           <h1 className="text-5xl">
-            <Link>
+            <Link to="/">
               {title}
             </Link>
           </h1>
