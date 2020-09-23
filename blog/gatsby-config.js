@@ -30,6 +30,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: `blg`,
+            }
+          },
           `gatsby-remark-code-titles`,
           {
             resolve: `gatsby-remark-prismjs`,
@@ -54,7 +60,7 @@ module.exports = {
             },
           },
           {
-          resolve: `gatsby-remark-sns-images`,
+            resolve: `gatsby-remark-sns-images`,
             options: {
               output: {
                 directory: '',
