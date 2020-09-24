@@ -42,7 +42,6 @@
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "typography": "^0.16.19",
-    "typography-theme-stow-lake": "^0.16.19",
     "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
