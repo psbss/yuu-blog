@@ -31,7 +31,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.date}
           </p>
         </div>
-        <section className="leading-7" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section className="leading-7 blg" dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />
         <TwitterShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
           <TwitterIcon round size={45} />

@@ -151,25 +151,74 @@ input[type="checkbox"].dmcheck {
   }
 }
 
-.blg h {
-  &2,
-  &3,
-  &4,
-  &5 {
-    margin-top: 2.3em;
-    margin-bottom: 0.5em;
-    font-weight: 700;
-    line-height: 1.5;
-    outline: 0;
+p {
+  margin: 0;
+}
+
+$heading5: #93a5b1;
+$rgbgray: rgba(2, 13, 60, 0.6);
+
+.blg {
+  p {
+    margin-top: 1.6rem;
   }
-  &2 {
-    font-size: 1.5rem;
+  &:first-child {
+    margin-top: 0.3em;
   }
-  &3 {
-    font-size: 1.25rem;
+
+  ul {
+    padding-left: 0;
+    margin: 1.4rem 0;
+    line-height: 1.7;
+    & > li {
+      list-style: none;
+      list-style-position: inside;
+      position: relative;
+      padding-left: 1.6em;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0.7em;
+        left: 0.35em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: $rgbgray;
+      }
+    }
   }
-  &4 {
+  ol {
+    margin: 1.4rem 0;
+    line-height: 1.7;
   }
-  &5 {
+
+  h {
+    &2,
+    &3,
+    &4,
+    &5 {
+      margin: 2.3em 0 0.5em;
+      font-weight: 600;
+      line-height: 1.5;
+      outline: 0;
+    }
+    &2 {
+      padding-bottom: 0.2em;
+      margin-bottom: 1.1rem;
+      font-size: 1.5em;
+      position: relative;
+      border-bottom: 1px solid rgba(92, 147, 187, 0.17);
+    }
+    &3 {
+      font-size: 1.25rem;
+    }
+    &4 {
+      color: $heading5;
+      font-size: 1em;
+    }
+    &5 {
+      font-size: 0.85em;
+      color: $heading5;
+    }
   }
 }
