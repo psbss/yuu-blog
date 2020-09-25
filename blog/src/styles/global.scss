@@ -113,12 +113,11 @@ input[type="checkbox"].dmcheck {
   border-radius: 5px;
   appearance: none;
   cursor: pointer;
-  vertical-align: 2px;
   outline: none;
 
   &:checked + label {
-    left: 74px;
-    top: 23px;
+    left: 72px;
+    top: 20px;
     background-color: #ffffff;
   }
 
@@ -130,8 +129,8 @@ input[type="checkbox"].dmcheck {
     position: absolute;
     cursor: pointer;
     transition: all 0.3s ease;
-    left: 52px;
-    top: 23px;
+    left: 49px;
+    top: 20px;
     opacity: 0.9;
     background-color: #000000;
   }

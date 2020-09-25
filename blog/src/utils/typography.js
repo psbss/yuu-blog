@@ -1,16 +1,26 @@
 import Typography from "typography"
 
 const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.666,
+  baseFontSize: "16px",
+  baseLineHeight: 1.8,
   headerFontFamily: [
-    "Avenir Next",
+    "Georgia",
+    "-apple-system",
+    "BlinkMacSystemFont",
     "Helvetica Neue",
-    "Segoe UI",
-    "Helvetica",
-    "Arial",
-    "sans-serif",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    "sans-self",
   ],
-  bodyFontFamily: ["Georgia", "serif"],
+  bodyFontFamily: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Helvetica Neue",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    "sans-self",
+  ],
 })
 export default typography
