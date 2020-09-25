@@ -32,9 +32,7 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              className: `blg`,
-            }
+            options: {},
           },
           `gatsby-remark-code-titles`,
           {
