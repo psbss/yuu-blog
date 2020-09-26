@@ -16,7 +16,7 @@ const Layout = ({ title, children }) => {
           <DarkModeToggle />
         </div>
       </header>
-      <div className="w-full mx-4 lg:flex">
+      <div className="mx-4 lg:flex">
         <div className="hidden lg:contents">
           <Bio />
         </div>
