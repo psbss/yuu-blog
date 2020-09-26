@@ -1,6 +1,27 @@
 // Prime.js theme VS Code Dark+
 // https://github.com/PrismJS/prism-themes
 
+// my settings
+.gatsby-highlight {
+  border-radius: 0.3em;
+  margin: 2rem auto;
+  padding: 0 1em;
+
+  pre[class*="language-"] {
+    &.line-numbers {
+      padding: 0.5em 1em 0.5em 2.8em;
+      line-height: 1.6;
+    }
+    .line-numbers-rows {
+      padding: 0.5em 0 0.5em 0.8em;
+      > span:before {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// general settings
 pre[class*="language-"],
 code[class*="language-"] {
   color: #d4d4d4;
