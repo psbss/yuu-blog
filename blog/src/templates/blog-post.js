@@ -32,19 +32,17 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </p>
         </div>
         <section className="leading-7 blg" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <TwitterShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
-          <TwitterIcon round size={45} />
-        </TwitterShareButton>
-        <LineShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
-          <LineIcon round size={45} />
-        </LineShareButton>
-        <footer>
-          <Bio />
-        </footer>
+        <div className="my-6 text-center">
+          <TwitterShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+            <TwitterIcon round size={45} />
+          </TwitterShareButton>
+          <LineShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+            <LineIcon round size={45} />
+          </LineShareButton>
+        </div>
       </article>
 
-      <nav>
+      <nav className="mt-6 mb-12">
         <ul>
           <li>
             {previous && (
@@ -62,6 +60,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
+
+      <footer>
+        <Bio />
+      </footer>
     </ArticleLayout>
   )
 }
