@@ -20,7 +20,7 @@ const Layout = ({ title, children }) => {
         <div className="hidden lg:contents">
           <Bio />
         </div>
-        <main className="w-full lg:w-2/3">{children}</main>
+        <main className="lg:w-2/3">{children}</main>
       </div>
       <footer className="mt-6 mb-4 text-center">Yuki Uehara , {new Date().getFullYear()}</footer>
     </div >
