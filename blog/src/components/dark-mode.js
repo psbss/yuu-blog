@@ -8,7 +8,7 @@ const DarkModeToggle = () => {
   const darkMode = useDarkMode(false);
 
   return (
-    <div className="flex p-4 ml-auto mr-0 relative">
+    <div className="flex p-4 ml-auto mr-0 relative w-32">
       <button className="mr-2 focus:outline-none" type="button" onClick={darkMode.disable}>
         <img src={sunSvg} width="25px" className="mb-0 p-1 svg-sun rounded-full"></img>
       </button>
