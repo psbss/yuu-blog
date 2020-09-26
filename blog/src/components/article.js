@@ -7,7 +7,7 @@ const ArticleLayout = ({ title, children }) => {
     <div className="container mx-auto">
       <header className="mb-6 mx-2 mt-4">
         <div className="flex">
-          <h1 className="text-5xl">
+          <h1 className="text-2xl sm:text-5xl pt-4 sm:p-0">
             <Link to="/">
               {title}
             </Link>
