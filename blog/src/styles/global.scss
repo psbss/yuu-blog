@@ -1,167 +1,14 @@
-.gatsby-highlight {
-  background-color: #e3e5fd8f;
-  border-radius: 0.3em;
-  margin: 0.5em 0;
-  padding: 1em;
-  overflow: auto;
-
-  pre[class*="language-"] {
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    overflow: initial;
-    float: left;
-    min-width: 100%;
-    &.line-numbers {
-      padding-left: 2.8em;
-      padding-right: 1em;
-    }
-  }
-}
-
-/* Sehll Prompt */
-.command-line-prompt > span {
-  &:before {
-    color: #999;
-    content: " ";
-    display: block;
-    padding-right: 0.8em;
-  }
-
-  &[data-user]:before {
-    content: "[" attr(data-user) "@" attr(data-host) "] $";
-  }
-
-  &[data-user="root"]:before {
-    content: "[" attr(data-user) "@" attr(data-host) "] #";
-  }
-
-  &[data-prompt]:before {
-    content: attr(data-prompt);
-  }
-}
-/* Code Title */
-.gatsby-code-title {
-  background: #b5b7ca8f;
-  color: #b38383;
-  margin-bottom: -0.65em;
-  padding: 0.7rem 1.05rem;
-  font-size: 0.8em;
-  line-height: 0.2;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  font-weight: 600;
-  border-radius: 8px 8px 0 0;
-  display: table;
-}
-
-// List Item styles
-li {
-  margin-bottom: calc(0.6rem / 2);
-}
-
-// Darkmode Settiongs
-body {
-  $bg-color: #15202b;
-  $link-color: #1b95e0;
-  .navbar {
-    background-color: #1b2938;
-  }
-  &.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-    transition: background-color 0.3s ease;
-  }
-  &.dark-mode {
-    background-color: $bg-color;
-    color: #ffffff;
-    a {
-      color: $link-color;
-    }
-    @for $cnr from 1 to 6 {
-      h#{$cnr} {
-        color: #ffffff;
-        a {
-          color: #ffffff;
-        }
-      }
-    }
-    // plugin
-    .gatsby {
-      // code styles
-      $code-bg-color: #d4d4d4;
-      $code-title-color: #2e445f;
-      &-code-title {
-        background-color: $code-title-color;
-      }
-      &-highlight {
-        background-color: $code-bg-color;
-      }
-    }
-    blockquote {
-      border-color: #1d95e0;
-      color: #797d82;
-    }
-  }
-}
-
-.header {
-  display: flex;
-}
-
-input[type="checkbox"].dmcheck {
-  width: 40px;
-  height: 10px;
-  background: #555;
-  position: relative;
-  border-radius: 5px;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-
-  &:checked + label {
-    left: 72px;
-    top: 20px;
-    background-color: #ffffff;
-  }
-
-  & + label {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    left: 49px;
-    top: 20px;
-    opacity: 0.9;
-    background-color: #000000;
-  }
-}
-
-.svg {
-  &-sun {
-    background-color: #f39c12;
-  }
-  &-moon {
-    background-color: #f1c40f;
-  }
-}
-
-.important {
-  &-block {
-    display: block !important;
-  }
-}
-
-p {
-  margin: 0;
-}
-
+// Color Code
 $heading5: #93a5b1;
 $linkcolor: #1994f9;
 $rgbgray: rgba(2, 13, 60, 0.6);
 
+// General settings
+p {
+  margin: 0;
+}
+
+// Blog article style
 .blg {
   p {
     margin-top: 1.6rem;
@@ -228,5 +75,121 @@ $rgbgray: rgba(2, 13, 60, 0.6);
       font-size: 0.85em;
       color: $heading5;
     }
+  }
+}
+
+// Code syntax highlight
+.gatsby-highlight {
+  border-radius: 0.3em;
+  margin: 2rem auto;
+  padding: 0 1em;
+
+  pre[class*="language-"] {
+    &.line-numbers {
+      padding: 0.5em 1em 0.5em 2.8em;
+      line-height: 1.6;
+    }
+    .line-numbers-rows {
+      padding: 0.5em 0 0.5em 0.8em;
+      > span:before {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+/* Code Title */
+.gatsby-code-title {
+  background: #b5b7ca8f;
+  color: #b38383;
+  margin-bottom: -0.65em;
+  padding: 0.7rem 1.05rem;
+  font-size: 0.8em;
+  line-height: 0.2;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  display: table;
+}
+
+// List Item styles
+li {
+  margin-bottom: calc(0.6rem / 2);
+}
+
+// Darkmode Settiongs
+body {
+  $bg-color: #15202b;
+  $link-color: #1b95e0;
+  .navbar {
+    background-color: #1b2938;
+  }
+  &.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+    transition: background-color 0.3s ease;
+  }
+  &.dark-mode {
+    background-color: $bg-color;
+    color: #ffffff;
+    a {
+      color: $link-color;
+    }
+    @for $cnr from 1 to 6 {
+      h#{$cnr} {
+        color: #ffffff;
+      }
+    }
+    blockquote {
+      border-color: #1d95e0;
+      color: #797d82;
+    }
+  }
+}
+
+.important {
+  &-block {
+    display: block !important;
+  }
+}
+
+// Dark-Mode, White-Mode toggle icon
+input[type="checkbox"].dmcheck {
+  width: 40px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+
+  &:checked + label {
+    left: 72px;
+    top: 20px;
+    background-color: #ffffff;
+  }
+
+  & + label {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    left: 49px;
+    top: 20px;
+    opacity: 0.9;
+    background-color: #000000;
+  }
+}
+
+.svg {
+  &-sun {
+    background-color: #f39c12;
+  }
+  &-moon {
+    background-color: #f1c40f;
   }
 }
