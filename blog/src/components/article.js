@@ -18,7 +18,7 @@ const ArticleLayout = ({ title, children }) => {
       <main className="mx-40">
         {children}
       </main>
-      <footer>Yuki Uehara , {new Date().getFullYear()}</footer>
+      <footer className="text-center my-4">Yuki Uehara , {new Date().getFullYear()}</footer>
     </div>
   )
 }
