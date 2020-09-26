@@ -79,7 +79,10 @@ body {
     }
     @for $cnr from 1 to 6 {
       h#{$cnr} {
-        color: $link-color;
+        color: #ffffff;
+        a {
+          color: #ffffff;
+        }
       }
     }
     // plugin
@@ -156,14 +159,19 @@ p {
 }
 
 $heading5: #93a5b1;
+$linkcolor: #1994f9;
 $rgbgray: rgba(2, 13, 60, 0.6);
 
 .blg {
   p {
     margin-top: 1.6rem;
+    &:first-child {
+      margin-top: 0.3em;
+    }
   }
-  &:first-child {
-    margin-top: 0.3em;
+
+  a {
+    color: $linkcolor;
   }
 
   ul {
