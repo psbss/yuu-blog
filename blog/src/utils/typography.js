@@ -1,18 +1,26 @@
 import Typography from "typography"
-import Theme from "typography-theme-stow-lake"
 
-Theme.googleFonts.push({
-  name: "Noto+Sans+JP",
-  styles: ["400"],
+const typography = new Typography({
+  baseFontSize: "16px",
+  baseLineHeight: 1.8,
+  headerFontFamily: [
+    "Georgia",
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Helvetica Neue",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    "sans-self",
+  ],
+  bodyFontFamily: [
+    "-apple-system",
+    "BlinkMacSystemFont",
+    "Helvetica Neue",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    "sans-self",
+  ],
 })
-Theme.bodyFontFamily = ["Noto Sans JP", "Roboto", "serif"]
-const typography = new Typography(Theme)
-
-// Hot reload typography in development.
-if (process.env.NODE_ENV !== `production`) {
-  typography.injectStyles()
-}
-
 export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale

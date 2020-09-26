@@ -30,6 +30,10 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {},
+          },
           `gatsby-remark-code-titles`,
           {
             resolve: `gatsby-remark-prismjs`,
@@ -44,7 +48,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 600,
+              linkImagesToOriginal: false,
+              wrapperStyle: `margin: 2.2rem auto;`
             },
           },
           {
@@ -54,7 +60,7 @@ module.exports = {
             },
           },
           {
-          resolve: `gatsby-remark-sns-images`,
+            resolve: `gatsby-remark-sns-images`,
             options: {
               output: {
                 directory: '',
@@ -103,7 +109,6 @@ module.exports = {
               timeout: 10000,
             },
           },
-          `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],

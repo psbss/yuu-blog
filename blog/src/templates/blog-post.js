@@ -2,9 +2,8 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
-import Layout from "../components/layout"
+import ArticleLayout from "../components/article"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 import {
   TwitterShareButton,
   TwitterIcon,
@@ -17,59 +16,34 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   return (
-    <Layout location={location} title={siteTitle}>
+    <ArticleLayout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         pagePath={post.frontmatter.pagepath}
       />
       <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
+        <div className="mb-6">
+          <h1 className="text-2xl">
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
+          <p className="text-sm">
             {post.frontmatter.date}
           </p>
-        </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <TwitterShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
-          <TwitterIcon round size={32} />
-        </TwitterShareButton>
-        <LineShareButton title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
-          <LineIcon round size={32} />
-        </LineShareButton>
-        <footer>
-          <Bio />
-        </footer>
+        </div>
+        <section className="leading-7 blg" dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div className="my-6 text-center">
+          <TwitterShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+            <TwitterIcon round size={45} />
+          </TwitterShareButton>
+          <LineShareButton className="m-3" title={post.frontmatter.title + "\n"} via="psnzbss" url={location.href}>
+            <LineIcon round size={45} />
+          </LineShareButton>
+        </div>
       </article>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+      <nav className="mt-6 mb-12">
+        <ul>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -86,7 +60,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-    </Layout>
+
+      {/* <footer>
+        <Bio />
+      </footer> */}
+    </ArticleLayout>
   )
 }
 

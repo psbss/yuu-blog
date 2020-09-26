@@ -37,31 +37,15 @@ const Bio = () => {
 
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <div className="w-1/3 mr-8">
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
+        className="important-block my-0 mx-auto rounded-full"
       />
-      <p>
-        Written by <strong>{author.name}</strong>(<a href={`https://twitter.com/${social.twitter}`}>@psnzbss</a>)
-        {`  `}
-        <br />
-        {author.summary}
-      </p>
+      <p className="text-xl text-center mt-6">{author.name}</p>
+      <p className="text-center text-sm">(<a href={`https://twitter.com/${social.twitter}`}>@psnzbss</a>)</p>
+      <p className="mt-3">{author.summary}</p>
     </div>
   )
 }

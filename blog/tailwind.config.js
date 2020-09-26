@@ -6,8 +6,17 @@ module.exports = {
     "./src/**/*.tsx"
   ],
   theme: {
-    extend: {},
+    container: {
+      screens: {
+        sm: '620px',
+        md: '620px',
+        xl: '1024px',
+      },
+    },
   },
   variants: {},
   plugins: [],
+  corePlugins: {
+    fontFamily: false,
+  }
 }

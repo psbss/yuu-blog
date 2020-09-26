@@ -1,80 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
-
-import { rhythm, scale } from "../utils/typography"
+import Bio from "../components/bio"
 import DarkModeToggle from "./dark-mode"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
-  let header
-
-  if (location.pathname === rootPath) {
-    header = (
-      <div className="header">
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-        <DarkModeToggle />
-      </div>
-    )
-  } else {
-    header = (
-      <div className="header">
-        <h1
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-        <DarkModeToggle />
-      </div>
-    )
-  }
+const Layout = ({ title, children }) => {
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `5rem`,
-        }}
-      >
-        Copyright © Yuki Uehara , {new Date().getFullYear()}
-      </footer>
-    </div>
+    <div className="container mx-auto">
+      <header class="mb-6 mx-2 mt-4">
+        <div className="flex">
+          <h1 className="text-5xl">
+            <Link to="/">
+              {title}
+            </Link>
+          </h1>
+          <DarkModeToggle />
+        </div>
+      </header>
+      <div className="w-full mx-4 lg:flex">
+        <div className="hidden lg:contents">
+          <Bio />
+        </div>
+        <main className="w-full lg:w-2/3">{children}</main>
+      </div>
+      <footer className="mt-6 mb-4 text-center">Yuki Uehara , {new Date().getFullYear()}</footer>
+    </div >
   )
 }
 

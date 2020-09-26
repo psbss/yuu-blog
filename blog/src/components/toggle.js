@@ -1,7 +1,7 @@
 import React from "react"
 
 const Toggle = ({ checked, onChange }) => (
-  <span className="toggle-control">
+  <span>
     <input
       className="dmcheck"
       type="checkbox"
@@ -9,8 +9,8 @@ const Toggle = ({ checked, onChange }) => (
       onChange={onChange}
       id="dmcheck"
     />
-    <label htmlFor="dmcheck" />
-  </span>
+    <label htmlFor="dmcheck" className="focus:outline-none"/>
+  </span >
 )
 
 export default Toggle

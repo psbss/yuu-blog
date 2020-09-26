@@ -1,45 +1,83 @@
-.gatsby-highlight {
-  background-color: #e3e5fd8f;
-  border-radius: 0.3em;
-  margin: 0.5em 0;
-  padding: 1em;
-  overflow: auto;
+// Color Code
+$heading5: #93a5b1;
+$linkcolor: #1994f9;
+$rgbgray: rgba(2, 13, 60, 0.6);
 
-  pre[class*="language-"] {
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    overflow: initial;
-    float: left;
-    min-width: 100%;
-    &.line-numbers {
-      padding-left: 2.8em;
-      padding-right: 1em;
+// General settings
+p {
+  margin: 0;
+}
+
+// Blog article style
+.blg {
+  p {
+    margin-top: 1.6rem;
+    &:first-child {
+      margin-top: 0.3em;
+    }
+  }
+
+  a {
+    color: $linkcolor;
+  }
+
+  ul {
+    padding-left: 0;
+    margin: 1.4rem 0;
+    line-height: 1.7;
+    & > li {
+      list-style: none;
+      list-style-position: inside;
+      position: relative;
+      padding-left: 1.6em;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0.7em;
+        left: 0.35em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: $rgbgray;
+      }
+    }
+  }
+  ol {
+    margin: 1.4rem 0;
+    line-height: 1.7;
+  }
+
+  h {
+    &2,
+    &3,
+    &4,
+    &5 {
+      margin: 2.3em 0 0.5em;
+      font-weight: 600;
+      line-height: 1.5;
+      outline: 0;
+    }
+    &2 {
+      padding-bottom: 0.2em;
+      margin-bottom: 1.1rem;
+      font-size: 1.5em;
+      position: relative;
+      border-bottom: 1px solid rgba(92, 147, 187, 0.17);
+    }
+    &3 {
+      font-size: 1.25rem;
+    }
+    &4 {
+      color: $heading5;
+      font-size: 1em;
+    }
+    &5 {
+      font-size: 0.85em;
+      color: $heading5;
     }
   }
 }
 
-/* Sehll Prompt */
-.command-line-prompt > span {
-  &:before {
-    color: #999;
-    content: " ";
-    display: block;
-    padding-right: 0.8em;
-  }
-
-  &[data-user]:before {
-    content: "[" attr(data-user) "@" attr(data-host) "] $";
-  }
-
-  &[data-user="root"]:before {
-    content: "[" attr(data-user) "@" attr(data-host) "] #";
-  }
-
-  &[data-prompt]:before {
-    content: attr(data-prompt);
-  }
-}
 /* Code Title */
 .gatsby-code-title {
   background: #b5b7ca8f;
@@ -48,8 +86,7 @@
   padding: 0.7rem 1.05rem;
   font-size: 0.8em;
   line-height: 0.2;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono,
-    Courier New, monospace;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-weight: 600;
   border-radius: 8px 8px 0 0;
   display: table;
@@ -80,19 +117,7 @@ body {
     }
     @for $cnr from 1 to 6 {
       h#{$cnr} {
-        color: $link-color;
-      }
-    }
-    // plugin
-    .gatsby {
-      // code styles
-      $code-bg-color: #d4d4d4;
-      $code-title-color: #2e445f;
-      &-code-title {
-        background-color: $code-title-color;
-      }
-      &-highlight {
-        background-color: $code-bg-color;
+        color: #ffffff;
       }
     }
     blockquote {
@@ -102,52 +127,27 @@ body {
   }
 }
 
-.header {
-  display: flex;
-}
-
-.dark-mode-toggle {
-  margin: 0 auto;
-  padding-top: 0.7em;
-  position: relative;
-  & > button {
-    font-size: 1.2em;
-    background: none;
-    border: none;
-    color: #ffe600;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    &:last-child {
-      color: #666;
-    }
-
-    &:focus {
-      outline: none;
-    }
+.important {
+  &-block {
+    display: block !important;
   }
 }
 
-input[type='checkbox'].dmcheck {
+// Dark-Mode, White-Mode toggle icon
+input[type="checkbox"].dmcheck {
   width: 40px;
   height: 10px;
   background: #555;
   position: relative;
   border-radius: 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   cursor: pointer;
-  vertical-align: 2px;
   outline: none;
 
   &:checked + label {
-    left: 60px;
-    top: 25px;
+    left: 72px;
+    top: 20px;
     background-color: #ffffff;
-  }
-
-  &:focus-visible {
-    outline: solid 2px white;
   }
 
   & + label {
@@ -155,13 +155,21 @@ input[type='checkbox'].dmcheck {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    transition: all 0.3s ease;
-    cursor: pointer;
     position: absolute;
-    left: 32px;
-    top: 25px;
-    background: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    left: 49px;
+    top: 20px;
     opacity: 0.9;
     background-color: #000000;
+  }
+}
+
+.svg {
+  &-sun {
+    background-color: #f39c12;
+  }
+  &-moon {
+    background-color: #f1c40f;
   }
 }
