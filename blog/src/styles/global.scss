@@ -78,98 +78,13 @@ p {
   }
 }
 
-/* Code Title */
-.gatsby-code-title {
-  background: #b5b7ca8f;
-  color: #b38383;
-  margin-bottom: -0.65em;
-  padding: 0.7rem 1.05rem;
-  font-size: 0.8em;
-  line-height: 0.2;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  font-weight: 600;
-  border-radius: 8px 8px 0 0;
-  display: table;
-}
-
 // List Item styles
 li {
   margin-bottom: calc(0.6rem / 2);
 }
 
-// Darkmode Settiongs
-body {
-  $bg-color: #15202b;
-  $link-color: #1b95e0;
-  .navbar {
-    background-color: #1b2938;
-  }
-  &.light-mode {
-    background-color: #ffffff;
-    color: #000000;
-    transition: background-color 0.3s ease;
-  }
-  &.dark-mode {
-    background-color: $bg-color;
-    color: #ffffff;
-    a {
-      color: $link-color;
-    }
-    @for $cnr from 1 to 6 {
-      h#{$cnr} {
-        color: #ffffff;
-      }
-    }
-    blockquote {
-      border-color: #1d95e0;
-      color: #797d82;
-    }
-  }
-}
-
 .important {
   &-block {
     display: block !important;
-  }
-}
-
-// Dark-Mode, White-Mode toggle icon
-input[type="checkbox"].dmcheck {
-  width: 40px;
-  height: 10px;
-  background: #555;
-  position: relative;
-  border-radius: 5px;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-
-  &:checked + label {
-    left: 66px;
-    top: 20px;
-    background-color: #ffffff;
-  }
-
-  & + label {
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    position: absolute;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    left: 43px;
-    top: 20px;
-    opacity: 0.9;
-    background-color: #000000;
-  }
-}
-
-.svg {
-  &-sun {
-    background-color: #f39c12;
-  }
-  &-moon {
-    background-color: #f1c40f;
   }
 }
