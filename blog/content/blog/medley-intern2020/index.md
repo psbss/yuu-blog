@@ -4,7 +4,6 @@ date: "2020-09-20"
 description: ""
 pagepath: "https://blog.ue-y.me/medley-intern2020/thumbnail.png"
 ---
-# 株式会社メドレーのインターンに参加しました
 
 この国の医療について議論した。  
 
