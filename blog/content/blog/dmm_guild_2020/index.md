@@ -7,7 +7,7 @@ pagepath: "https://blog.ue-y.me/dmm_guild_2020/thumbnail.png"
 
 # DMM GUILD 2020 に参加しました
 
-【写真】
+![DMMのジャングル](./forest-in-dmmcom.jpg)
 *写真はイメージです。実際と異なる場合があります。(オンライン参加の為)
 
 DMM GUILD 2020 に参加した。  
