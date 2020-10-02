@@ -2,39 +2,42 @@
 
 This is my blog build with Gatsby.js
 
-# About
+## Feature
+
+- Gatsby.js npmコマンド
+- CI/CD by GithubActions
+- Github Issues
+- Automatic genelated OGP Image
+
 Gatsby.js に実装されているコマンドはそのまま利用することができます。  
-Github Actions にて ビルド -> デプロイ を行っているので、場所や端末を気にすることなくどこでもブログがかけます。
+CI/CD は Github Actions を採用し、個人契約のホスティングサーバにて配信しています。そのため場所や端末を気にすることなくどこでもブログを書いて記事の公開可能です。
 
-# Feature
-Github Actions を活用することで、remote/masterにpushすると自動でbuild -> Deployをしてくれます。
-ここのロジックは(```.github/workflows/build.yaml```)にて定義。
+remote/masterにpushすると自動でbuild -> Deployをしてくれます。  
+ここのロジックは(```.github/workflows/build.yaml```)にて定義してあります。
 
-~~最後にmasterに生成物をpushし直すのは次回ビルド時に変更したもののみビルドし直すことで効率を高めるためです。~~  
-廃止しました、理由としては差分のみのビルドを行うよりも再ビルドしたほうがコストが安いからです。
+プロジェクト管理は Github issues にて行っています。
 
-プロジェクト管理は ~~Github Projects~~ Github issues にて行っています。
+記事のOGPアイキャッチ画像は自動で生成されます。生成ロジックは以下の記事に書いてあります。  
+[https://blog.ue-y.me/gatsby-ogp/](https://blog.ue-y.me/gatsby-ogp/)
 
 ## Command
 Gatsby 関連コマンド
 ```bash
 # Build
-    gatsby build
+    npx gatsby build
 
 # Develop Server
-    gatsby develop
+    npx gatsby develop
 
 # Public Server
-    gatsby serve
+    npx gatsby serve
 
 # Delete .cache/ public/ directory
-    gatsby clean
+    npx gatsby clean
 ```
 
 独自コマンド
 ```bash
-# push remote master 後生成物が再度masterにpushされたときのローカルブランチ切り替え
-    sh changebranch.sh
 # New article
     sh newarticle.sh
 ```
@@ -52,3 +55,4 @@ sh newarticle.sh [Article slug] [Article title]
 - title: [Article slug]
 - date: シェルスクリプト実行年月日
 - description: 空欄
+- pagepath: OGP用アイキャッチ画像のパス
