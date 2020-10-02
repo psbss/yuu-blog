@@ -1,7 +1,7 @@
 ---
-title: "株式会社メドレーのインターンに参加しました。"
+title: "株式会社メドレーのインターンに参加しました"
 date: "2020-09-20"
-description: ""
+description: "株式会社メドレーのコードを全く書かないエンジニアインターンに参加しました。日本の医療を本気で変える。そんな変革方法について議論しました。"
 pagepath: "https://blog.ue-y.me/medley-intern2020/thumbnail.png"
 ---
 
