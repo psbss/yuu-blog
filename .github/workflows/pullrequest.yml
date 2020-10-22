@@ -1,0 +1,40 @@
+name: Gatsby build
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build_and_deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      # 必要なパッケージのインストール
+      - name: npm install
+        run: |
+          cd blog
+          npm ci
+          npm run build --if-present
+        env:
+          CI: true
+      # Artifactのアップロード
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: public
+          path: blog/public
+      # SSHキーのインストール
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2.0.1
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      # rsyncの実行
+      - name: rsync
+        run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
