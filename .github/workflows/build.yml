@@ -31,12 +31,7 @@ jobs:
           npm run build --if-present
         env:
           CI: true
-
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
+      # Archive Production Artifact
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
@@ -51,12 +46,7 @@ jobs:
       # rsyncの実行
       - name: rsync
         run: rsync -auvz --dry-run --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
-
-  slack_notify:
-    name: Slack notification
-    needs: [build, deploy]
-    runs-on: ubuntu-latest
-    steps:
+      # Slack notify
       - name: Set COMMIT_MESSAGE
         run: echo ::set-env name=COMMIT_MESSAGE::$(echo "${{ github.event.head_commit.message }}" | tr '\n' ' ')
       - name: Slack Incoming Webhook
