@@ -20,21 +20,15 @@ jobs:
         uses: actions/cache@v2
         id: node_module_cache
         with: 
-          path: ./blog/node_modules
+          path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
       # 必要なパッケージのインストール
       - name: npm install
         run: |
-          echo "ls -la"
-          ls -la
-          echo "blog ls -la"
-          ls -la blog/
-          echo "~ ls -la"
-          ls -la ~/
           cd blog
-          npm install
+          npm ci
           npm run build --if-present
         env:
           CI: true
