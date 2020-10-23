@@ -9,6 +9,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -26,7 +27,6 @@ jobs:
             ${{ runner.os }}-node-
       # 必要なパッケージのインストール
       - name: npm install
-        if: steps.node_module_cache.outputs.cache-hit != 'true'
         run: |
           cd blog
           npm ci
