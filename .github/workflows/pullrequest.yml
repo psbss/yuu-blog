@@ -27,6 +27,12 @@ jobs:
       # 必要なパッケージのインストール
       - name: npm install
         run: |
+          echo "ls -la"
+          ls -la
+          echo "blog ls -la"
+          ls -la blog/
+          echo "~ ls -la"
+          ls -la ~/
           cd blog
           npm install
           npm run build --if-present
