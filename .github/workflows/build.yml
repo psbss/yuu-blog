@@ -3,7 +3,7 @@ name: Gatsby build
 on:
   push:
     branches:
-      - feature/githubactions
+      - master
 
 jobs:
   build:
@@ -18,6 +18,7 @@ jobs:
       # chache node_modules
       - name: Cache multiple paths
         uses: actions/cache@v2
+        id: node_module_cache
         with: 
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -25,6 +26,7 @@ jobs:
             ${{ runner.os }}-node-
       # 必要なパッケージのインストール
       - name: npm install
+        if: steps.node_module_cache.outputs.cache-hit != 'true'
         run: |
           cd blog
           npm ci
@@ -45,7 +47,7 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       # rsyncの実行
       - name: rsync
-        run: rsync -auvz --dry-run --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+        run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
       # Slack notify
       - name: Set COMMIT_MESSAGE
         run: echo ::set-env name=COMMIT_MESSAGE::$(echo "${{ github.event.head_commit.message }}" | tr '\n' ' ')
@@ -55,7 +57,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: Successfully automated deployment.
+          text: ブログの更新が完了したよ！
           attachments: |
             [
               {
