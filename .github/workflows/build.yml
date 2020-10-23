@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build, Deploy, Slack notify
     runs-on: ubuntu-latest
 
     steps:
@@ -25,14 +25,15 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      # 必要なパッケージのインストール
+      # Install Package
       - name: npm install
         run: |
           cd blog
           npm ci
+      # Run build
+      - name: npm build
+        run: |
           npm run build --if-present
-        env:
-          CI: true
       # Archive Production Artifact
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master

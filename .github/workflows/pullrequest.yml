@@ -24,14 +24,15 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      # 必要なパッケージのインストール
+      # Install Package
       - name: npm install
         run: |
           cd blog
           npm ci
+      # Run build
+      - name: npm build
+        run: |
           npm run build --if-present
-        env:
-          CI: true
       # # Artifactのアップロード
       # - name: Archive Production Artifact
       #   uses: actions/upload-artifact@master
