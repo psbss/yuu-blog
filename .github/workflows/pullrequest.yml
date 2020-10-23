@@ -26,13 +26,9 @@ jobs:
             ${{ runner.os }}-node-
       # 必要なパッケージのインストール
       - name: npm install
-        if: steps.node_module_cache.outputs.cache-hit != 'true'
         run: |
           cd blog
           npm install
-      - name: npm run build
-        run: |
-          cd blog
           npm run build --if-present
         env:
           CI: true
