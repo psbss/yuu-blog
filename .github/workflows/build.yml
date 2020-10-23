@@ -16,6 +16,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      # chache node_modules
+      - name: Cache multiple paths
+        uses: actions/cache@v2
+        with: 
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       # 必要なパッケージのインストール
       - name: npm install
         run: |
