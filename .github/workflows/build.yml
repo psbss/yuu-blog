@@ -3,7 +3,7 @@ name: Gatsby build
 on:
   push:
     branches:
-      - master
+      - feature/githubactions
 
 jobs:
   build:
@@ -50,7 +50,7 @@ jobs:
           known_hosts: ${{ secrets.KNOWN_HOSTS }}
       # rsyncの実行
       - name: rsync
-        run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+        run: rsync -auvz --dry-run --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
 
   slack_notify:
     name: Slack notification
