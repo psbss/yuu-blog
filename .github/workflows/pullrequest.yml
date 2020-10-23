@@ -32,6 +32,7 @@ jobs:
       # Run build
       - name: npm build
         run: |
+          cd blog/
           npm run build --if-present
       # # Artifactのアップロード
       # - name: Archive Production Artifact
