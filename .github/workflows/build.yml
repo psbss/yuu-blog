@@ -76,6 +76,10 @@ jobs:
                   {
                     "title": "Compare URL",
                     "value": "${{ github.event.compare }}"
+                  },
+                  {
+                    "title": "Blog URL"
+                    "value": "https://blog.ue-y.me/"
                   }
                 ]
               }
