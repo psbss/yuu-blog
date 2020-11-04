@@ -34,18 +34,3 @@ jobs:
         run: |
           cd blog/
           npm run build --if-present
-      # # Artifactのアップロード
-      # - name: Archive Production Artifact
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: public
-      #     path: blog/public
-      # # SSHキーのインストール
-      # - name: Install SSH Key
-      #   uses: shimataro/ssh-key-action@v2.0.1
-      #   with:
-      #     key: ${{ secrets.SSH_KEY }}
-      #     known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      # # rsyncの実行
-      # - name: rsync
-      #   run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
