@@ -2,7 +2,7 @@
 title: "2020年を振り返る by Yuu"
 date: "2020-12-31"
 description: ""
-pagepath: "https://blog.ue-y.me/about2020/thumbnail.png"
+pagepath: "https://blog.ue-y.me/about2020/about2020.png"
 ---
 
 2020年も終わるので反省も兼ねて振り返ってみようと思います。
