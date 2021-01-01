@@ -5,8 +5,6 @@ description: "2021年の目標と計画について"
 pagepath: "https://blog.ue-y.me/goal2021/thumbnail.png"
 ---
 
-# 2021の目標と計画 by Yuu
-
 あけましておめでとうございます！本年もよろしくお願いします！！
 
 ということで、毎年恒例の目標と計画の宣言エントリーです。
