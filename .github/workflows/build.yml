@@ -53,26 +53,13 @@ jobs:
       # Slack notify
       - name: Slack Incoming Webhook
         if: success()
-        uses: tokorom/action-slack-incoming-webhook@v1.1.3
+        uses: 8398a7/action-slack@v3
         env:
-          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: This is test.
-          attachments: |
-            [
-              {
-                "color": "good",
-                "author_name": "${{ github.actor }}",
-                "author_icon": "${{ github.event.sender.avatar_url }}",
-                "fields": [
-                  {
-                    "title": "GitHub Actions URL",
-                    "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
-                  },
-                  {
-                    "title": "Blog URL"
-                    "value": "https://ue-y.me/"
-                  }
-                ]
-              }
-            ]
+          status: ${{ job.status }}
+          author_name: ブログ更新情報
+          fields: |
+            message, commit, action, 
+
