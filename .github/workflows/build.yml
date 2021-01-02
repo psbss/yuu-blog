@@ -89,20 +89,6 @@ jobs:
                 "elements": [
                   {
                     "type": "plain_text",
-                    "text": "Commit Message :",
-                    "emoji": true
-                  },
-                  {
-                    "type": "mrkdwn",
-                    "text": "${{ env.COMMIT_MESSAGE }}"
-                  }
-                ]
-              },
-              {
-                "type": "context",
-                "elements": [
-                  {
-                    "type": "plain_text",
                     "text": "GitHub Actions URL :"
                   },
                   {
