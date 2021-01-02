@@ -57,13 +57,21 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          blocks: |
-            blocks = [
+          attachments: |
+            [
               {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "This is test msg."
-                }
+                "color": "good",
+                "author_name": "${{ github.actor }}",
+                "author_icon": "${{ github.event.sender.avatar_url }}",
+                "fields": [
+                  {
+                    "title": "GitHub Actions URL",
+                    "value": "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
+                  },
+                  {
+                    "title": "Blog URL"
+                    "value": "https://ue-y.me/"
+                  }
+                ]
               }
             ]
