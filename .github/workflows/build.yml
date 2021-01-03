@@ -59,75 +59,32 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           status: custom
-          text: ブログの更新が完了したよ！
           author_name: Github Actions infomation
           custom_payload: |
             {
-              blocks: [
-                  {
-                    type: "section",
-                    text: {
-                      type: "plain_text",
-                      text: "ブログの更新が完了したよ！",
-                      emoji: true
+              attachments: [
+                {
+                  pretext: "ブログの更新が完了したよ！",
+                  color: "good",
+                  author_name: "${{ github.actor }}",
+                  author_icon: "${{ github.event.sender.avatar_url }}",
+                  fields: [
+                    {
+                        title: "Commit Message",
+                        value: "${{ env.COMMIT_MESSAGE }}",
+                        short: false
+                    },
+                    {
+                      title: "GitHub Actions URL",
+                      value: "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}",
+                      short: false
+                    },
+                    {
+                      title: "Blog URL",
+                      value: "https://blog.ue-y.me/",
+                      short: false
                     }
-                  },
-                  {
-                    type: "divider"
-                  },
-                  {
-                    type: "context",
-                    elements: [
-                      {
-                        type: "image",
-                        image_url: "${{ github.event.sender.avatar_url }}",
-                        alt_text: "github avatar"
-                      },
-                      {
-                        type: "mrkdwn",
-                        text: ": ${{ github.actor }}"
-                      }
-                    ]
-                  },
-                  {
-                    type: "context",
-                    elements: [
-                      {
-                        type: "plain_text",
-                        text: "Commit Message :",
-                        emoji: true
-                      },
-                      {
-                        type: "mrkdwn",
-                        text: "${{ env.COMMIT_MESSAGE }}"
-                      }
-                    ]
-                  },
-                  {
-                    type: "context",
-                    elements: [
-                      {
-                        type: "plain_text",
-                        text: "GitHub Actions URL :"
-                      },
-                      {
-                        type: "mrkdwn",
-                        text: "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}"
-                      }
-                    ]
-                  },
-                  {
-                    type: "context",
-                    elements: [
-                      {
-                        type: "mrkdwn",
-                        text: "Blog URL :"
-                      },
-                      {
-                        type: "mrkdwn",
-                        text: "https://blog.ue-y.me/"
-                      }
-                    ]
-                  }
-                ]
-              }
+                  ]
+                }
+              ] 
+            }
