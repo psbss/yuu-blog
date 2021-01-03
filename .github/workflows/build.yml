@@ -70,11 +70,6 @@ jobs:
                   author_icon: "${{ github.event.sender.avatar_url }}",
                   fields: [
                     {
-                        title: "Commit Message",
-                        value: "${{ env.COMMIT_MESSAGE }}",
-                        short: false
-                    },
-                    {
                       title: "GitHub Actions URL",
                       value: "${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}",
                       short: false
