@@ -1,7 +1,7 @@
 ---
 title: "2020年を振り返る by Yuu"
 date: "2020-12-31"
-description: ""
+description: "2020年を振り返り2021年をどのように生きるのか考えます。"
 pagepath: "https://blog.ue-y.me/about2020/thumbnail.png"
 ---
 
@@ -19,7 +19,7 @@ pagepath: "https://blog.ue-y.me/about2020/thumbnail.png"
 
 ウィルスのせいで計画が大きく変化したが、結果としてチャンスに全力でベッドできる年だったと考えている。
 
-## KGI
+## OKR
 2019年1月1日に今年の目標を公開しました。
 https://twitter.com/psnzbss/status/1212072605777182723?s=20
 
