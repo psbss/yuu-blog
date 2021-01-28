@@ -2,7 +2,7 @@
   "name": "yuehara_blog",
   "private": true,
   "description": "This is Yuki Uheara's blog made by gatsby.js",
-  "version": "2.0",
+  "version": "2.0.0",
   "author": "Yuki Uehara",
   "dependencies": {
     "catchy-image": "^0.1.4",
