@@ -1,0 +1,15 @@
+{
+  "rules": {
+        "no-double-negative-ja": true,
+        "web-plus-db": true,
+        "textlint-rule-no-dropping-the-ra": true
+        // "prh": {
+        //   "rulePaths": []
+        // }
+    },
+  "filters": {
+        "allowlist": {
+            "allowlistConfigPaths": []
+        }
+    }
+}
