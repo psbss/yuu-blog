@@ -17,7 +17,7 @@ pagepath: "https://blog.ue-y.me/gatsby-sns/thumbnail.png"
 
 ソーシャルボタン(SNS共有ボタン)を簡単に実装するために用いるのが [React-Share](https://github.com/nygardk/react-share#readme) というプラグインです。  
 本来であればURL処理やアイコンを拾ってきて設置するなど、面倒な作業をやらないといけませんが、このプラグインを利用することでほぼ一瞬でできます。  
-ネット上には同様の記事が沢山出回っていますが、React/Gatsby初心者の私は盛大にハマってしまったので、できる限り詳しく書きます。（覚書）
+ネット上には同様の記事が沢山出回っていますが、React/Gatsby初心者の私は盛大にハマってしまったので、できる限り詳しく書きます（覚書）
 
 React-Share は2020年3月時点でかなり豊富な種類のSNSに対応しています。
 - Twitter
@@ -61,7 +61,7 @@ yarn add react-share
 
 ### 2. 設置
 
-設置場所はGatsby-sterter-blogを利用している人は```./src/templates/blog-post.js```に置いてあるテンプレートディレクトリ内に React-Share をインポートします。
+設置場所は```Gatsby-sterter-blog```を利用している人は```./src/templates/blog-post.js```に置いてあるテンプレートディレクトリ内に React-Share をインポートします。
 
 ```js:title=blog-post.js
 import {
@@ -96,8 +96,8 @@ import {
 // 1行目
 title={post.frontmatter.title + "\n"}
 ```
-この部分にて記事のタイトルを指定しています。{post.frontmatter.title}というのはblog-post.jsの下の方で指定している、graphqlから拾ってきています。  
-graphqlは一度```const post = data.markdownRemark```としてpostオブジェクト内に格納され、post内のfrontmatter配下titleにて定義されているので、上記のような書き方になっています。（たぶん）
+この部分にて記事のタイトルを指定しています。{post.frontmatter.title}というのは```blog-post.js```の下の方で指定している、graphqlから拾ってきています。  
+graphqlは一度```const post = data.markdownRemark```としてpostオブジェクト内に格納され、post内のfrontmatter配下titleにて定義されているので、上記のような書き方になっています（たぶん）
 
 対してURLは```url={location.href}```にて指定しています。
 

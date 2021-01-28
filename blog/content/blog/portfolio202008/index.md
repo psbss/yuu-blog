@@ -18,7 +18,7 @@ pagepath: "https://blog.ue-y.me/portfolio202008/thumbnail.png"
 
 ## 利用技術
 ### CSS Framework
-- TailwindCSS（PostCSS）
+- TailwindCSS（PostCSS）。
   先日開催された「[サマーインターン前にツヨツヨになっちゃおうの会](https://connpass.com/event/181419/)」にて [920oj](https://twitter.com/920OJ) さん(大仏が本体)が紹介していた TailwindCSS というフレームワークを利用してみました。
 
 ### Tools

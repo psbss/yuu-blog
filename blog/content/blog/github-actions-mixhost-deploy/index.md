@@ -26,7 +26,7 @@ ssh-keygen -t rsa -b 4096
 ```
 Enter file in which to save the key (/home/***/.ssh/id_rsa):
 ```
-と、「鍵どこに保存する？｝と聞かれるので、問題なければデフォルトのままEnterを押します。  
+と、「鍵どこに保存する？ ｝と聞かれるので、問題なければデフォルトのままEnterを押します。  
 すると、パスフレーズを聞かれます。
 ```bash
 Enter passphrase (empty for no passphrase):
