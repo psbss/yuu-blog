@@ -9,7 +9,7 @@ pagepath: "https://blog.ue-y.me/github_profile_design/thumbnail.png"
 
 アカウントのトップページをマークダウンで自由にカスタマイズすることができるんです！
 
-とはいっても、文字だけで作ると・・・
+とはいっても、文字だけで作ると…
 
 ![github profile 文字だけ](./github_profile_4.png)
 
@@ -34,7 +34,7 @@ pagepath: "https://blog.ue-y.me/github_profile_design/thumbnail.png"
 
 ![github アカウント名の確認方法](./github_user_id.png)
 
-2リポジトリ作成時は①②③を確認して作成しましょう。
+2リポジトリ作成時は（1）（2）（3）を確認して作成しましょう。
 
 ![github プロフィール用リポジトリ作成方法](./github_profile_2.png)
 ![github プロフィール用リポジトリ作成方法詳細画面](./github_profile_3.png)

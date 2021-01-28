@@ -8,7 +8,7 @@ pagepath: "https://blog.ue-y.me/gatsby-ogp/thumbnail.png"
 
 ![生成した画像](./gatsbyjs_ogp_image.png)
 
-Gatsby.jsに色々な機能を実装していますが、今回はOGP用の画像を自動生成します。OGP？なにそれという方に簡単に説明すると、OGPは[Open Graph Protocol]の略でTwitterやLINE、Slackに記事をシェアした際にリンクが画像とともに大きく表示される、あれです。
+Gatsby.jsに色々な機能を実装していますが、今回はOGP用の画像を自動生成します。OGP？ なにそれという方に簡単に説明すると、OGPは[Open Graph Protocol]の略でTwitterやLINE、Slackに記事をシェアした際にリンクが画像とともに大きく表示される、あれです。
 
 今回はSNS等でシェアした際に表示される画像を記事のタイトルから生成します。
 
@@ -19,11 +19,11 @@ Gatsby.jsに色々な機能を実装していますが、今回はOGP用の画�
 ## 利用するパッケージのインストール
 OGP用画像を生成するパッケージって色々あって、かなり機能豊富なものから、必要最低限のものまですでに用意されています。しかしー　これらほぼ全て『日本語対応』していません。つらい！
 
-ということで、このブログを作った初期から探し求めていたパッケージですが、先日ついに見つけてしまったので、機能実装することができました。（フルスクラッチで作る技量はありません...）
+ということで、このブログを作った初期から探し求めていたパッケージですが、先日ついに見つけてしまったので、機能実装することができました（フルスクラッチで作る技量はありません...）
 
 matsuken([@_kentaro_m](https://twitter.com/_kentaro_m)) さんが作成した[catchy-image](https://github.com/kentaro-m/catchy-image)というパッケージを利用します。
 
-これはnode.jsのモジュールであって、Gatsby.js用のプラグインではありません。私が利用している環境上npmでパッケージをインストールする必要があるのでnpmパッケージに登録しました。
+これはNode.jsのモジュールであって、Gatsby.js用のプラグインではありません。私が利用している環境上npmでパッケージをインストールする必要があるのでnpmパッケージに登録しました。
 
 [Gatsby-remark-sns-images](https://github.com/psbss/gatsby-remark-sns-images)
 

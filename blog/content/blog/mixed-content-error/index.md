@@ -16,7 +16,7 @@ CodiMD（のオンプレミス版）を利用していると Mixed content Error
 
 - 画像がhttpで配信された場合
     - 鍵マークを付けない
-- CSSやjavascriptがhttpで配信された場合
+- CSSやJavaScriptがhttpで配信された場合
     - 読み込みをブロックし、表示しない
     - よって画面が崩れる等の表示となる
 
@@ -32,4 +32,4 @@ Chromeの場合 F12 で Chrome Developer tools を開いてConsoleやNetworkよ�
 ```
 CMD_PROTOCOL_USESSL
 ```
-をTrueにすることで簡単に対応することができた。（なんじゃそりゃ
+をTrueにすることで簡単に対応することができた（なんじゃそりゃ
