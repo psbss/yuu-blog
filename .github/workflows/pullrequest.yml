@@ -36,4 +36,5 @@ jobs:
           npm run build --if-present
       - name: npm textlint
         run: |
+          cd blog/
           npm run textlint
