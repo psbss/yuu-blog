@@ -123,7 +123,7 @@ OS側はMac、Windows、Linuxにネイティブで対応し、CLIとしてnpmに
 
 また、地味に便利なのが、ページを開くとフォームに自動入力してくれますが、この入力までの時間がKeePassに比べると素早く、入力した部分もわかりやすいです。
 
-### Bitwardenに移行した決定点
+## Bitwardenに移行した決定点
 
 以上のような強力な機能を有するBitwardenですが、最終的に完全移行する決断をした理由は別にあります。
 
@@ -137,6 +137,22 @@ BitwardenはOSSとして全ソースコードがGitHub上に[公開](https://git
 
 ![BitwardenのDocker説明](./bitwarden_docker.png)
 
-以上が私がBitwardenをオススメする理由でした。
+以上が私がBitwardenをオススメする理由です。
 
-(アカウント断捨離で約150個のサービスから退会しました。)
+## 実際にKeePasssから移行する方法
+
+※ Bitwardenのアカウントは作ってある前提です。
+
+まずはKeePassのパスワードを出力します。```データベース → エクスポート → CSVファイルとしてエクスポート```これだけです。暗号化されていないファイルなので、流出すると一瞬で死にます。気をつけてください。
+
+![KeePassからパスワードをエクスポートする](./keepass_export.png)
+
+Bitwardenの操作はWEBクライアントで行います(分かりやすいため)。WEBクライアント[https://vault.bitwarden.com/](https://vault.bitwarden.com/)をまず開き、ログインしてツールを開きます。
+
+次に、フォーマットを```KeePassX```に指定し、先程KeePassからエクスポートしたファイルをインポートすれば完了です。
+
+![BitwardenでKeePassのパスワードをインポートする](./bitwarden_inport_valt.png)
+
+作業が終わったらKeePassからエクスポートしたファイルは確実に削除してください。
+
+以上のように比較的簡単に移行ができます。私は移行したついでにアカウント断捨離をして、約150個のサービスから退会しました。
