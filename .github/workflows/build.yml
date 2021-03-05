@@ -50,6 +50,16 @@ jobs:
       # rsyncの実行
       - name: rsync
         run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
+      # sync with aws
+      - name: AWS configure credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-1
+      - name: S3 sync
+        working-directory: blog/public
+        run: aws s3 sync . s3://ue-y.me --delete --grants read=uri=http:acs.amazonaws.com/groups/global/AllUsers
       # Slack notify
       - name: Slack Incoming Webhook
         if: success()
