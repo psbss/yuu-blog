@@ -3,7 +3,7 @@ name: Gatsby build
 on:
   push:
     branches:
-      - github/aws_actions
+      - master
 
 jobs:
   # package install & Build
