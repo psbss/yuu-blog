@@ -6,11 +6,11 @@ on:
       - master
 
 jobs:
+  # package install & Build
   build:
-    name: Build, Deploy, Slack notify
+    name: package install & Build
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
@@ -42,16 +42,18 @@ jobs:
         with:
           name: public
           path: blog/public
-      # SSHキーのインストール
-      - name: Install SSH Key
-        uses: shimataro/ssh-key-action@v2.0.1
+
+  # Sync with AWS S3
+  sync-with-s3:
+    name: Sync with AWS S3
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
         with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      # rsyncの実行
-      - name: rsync
-        run: rsync -auvz --delete blog/public/ ${{ secrets.REMOTE_USER }}@psbss.mixh.jp:./www/ue-y.me/blog/
-      # sync with aws
+          name: public
+          path: ~/dist/
       - name: AWS configure credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -59,11 +61,19 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - name: S3 sync
-        run: aws s3 sync blog/public s3://ue-y.me/blog/ --delete
-      # Slack notify
+        run: aws s3 sync ~/dist/ ${{ secrets.AWS_S3_BUCKET_NAME }} --delete
+
+  # Slack notification
+  slack_notification:
+    name: Slack notification
+    if: always()
+    runs-on: ubuntu-latest
+    needs: sync-with-s3
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v2
       - name: Slack Incoming Webhook
-        if: success()
         uses: 8398a7/action-slack@v3
+        if: enx.WORKFLOW_CONCLUSION == 'success'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
