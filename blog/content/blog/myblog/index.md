@@ -16,7 +16,7 @@ pagepath: "https://blog.ue-y.me/myblog/thumbnail.png"
 
 ### Gatsby.js
 
-Gatsby(ギャッツビー)？なにそれ？Man○om？って人用にざっくり説明すると、
+Gatsby(ギャッツビー)？ なにそれ？ Man○om？ って人用にざっくり説明すると、
 
 > Reactというフレームワークで作られている  
 > Node.js パッケージが色々使える  
